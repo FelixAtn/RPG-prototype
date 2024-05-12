@@ -25,6 +25,9 @@ void InputManager::Update()
 		(sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) ||
 		(sf::Keyboard::isKeyPressed(sf::Keyboard::S)));
 			
+	thisFrameKeys.SetBit((int)Key::E,
+		(sf::Keyboard::isKeyPressed(sf::Keyboard::E)));
+
 	thisFrameKeys.SetBit((int)Key::C,
 		(sf::Mouse::isButtonPressed(sf::Mouse::Left)) ||
 		(sf::Mouse::isButtonPressed(sf::Mouse::Left)));

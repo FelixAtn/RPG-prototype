@@ -1,8 +1,9 @@
 #pragma once
 #include "Input/InputManager.h"
-#include "Entity/Entity.h"
+#include "Entity/Character.h"
 #include "Entity/Entity resources/Animator.h"
 #include "Entity/World/Enemy/EnemyEntity.h"
+#include <vector>
 class Player : public Character
 {
 public:
@@ -34,5 +35,9 @@ private:
 	bool isInit = false;
 	float m_WalkSpeed = 200;
 	float m_DeltaTime;
+
+	sf::Texture ProjTex;
+	std::vector<sf::Sprite> projectile;
+	sf::RectangleShape projectiles;
 };
 

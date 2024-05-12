@@ -11,6 +11,7 @@ enum class Key
 	Right = 2,
 	Up = 3,
 	Down = 4,
+	E = 5,
 	C = 7,
 };
 

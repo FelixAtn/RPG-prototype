@@ -3,21 +3,26 @@
 
 Enemy::Enemy(Window& window, InputManager& input) : Character(m_EnemyText)
 {
-    Init();
+	Init();
 }
 
-Enemy::Enemy(){}
+Enemy::Enemy(){ }
 Enemy::~Enemy()
 {
 }
 
 void Enemy::Init()
 {
-	m_Loader.Load(m_EnemyText, "Fall (78x58).png");
-	m_Enemy.setTexture(m_EnemyText);
-	m_Enemy.setPosition(600, 600);
-	m_Enemy.setTextureRect(sf::IntRect(0, 0, 78, 58));
-	m_Enemy.setScale(1, 1);
+	isInit = true;
+	if (isInit)
+	{
+		m_Loader.Load(m_EnemyText, "Fall (78x58).png");
+		m_Enemy.setTexture(m_EnemyText);
+		m_Enemy.setPosition(600, 600);
+		m_Enemy.setTextureRect(sf::IntRect(0, 0, 78, 58));
+		m_Enemy.setScale(1, 1);
+		isInit = false;
+	}
 }
 
 void Enemy::Draw(Window& window)

@@ -165,7 +165,7 @@
   <ItemGroup>
     <ClCompile Include="src\Entity\World\World.cpp" />
     <ClCompile Include="src\Entity\World\Friend\FriendlyEntity.cpp" />
-    <ClCompile Include="src\Entity\Entity resources\Character.cpp" />
+    <ClCompile Include="src\Entity\Character.cpp" />
     <ClCompile Include="src\Physics\VectorNormalizer.cpp" />
     <ClCompile Include="src\Resources\InitSprites.cpp" />
     <ClCompile Include="src\Input\BitArithmetics.cpp" />
@@ -188,7 +188,7 @@
   <ItemGroup>
     <ClInclude Include="src\Entity\World\World.h" />
     <ClInclude Include="src\Entity\World\Friend\FriendlyEntity.h" />
-    <ClInclude Include="src\Entity\Entity resources\Character.h" />
+    <ClInclude Include="src\Entity\Character.h" />
     <ClInclude Include="src\Physics\VectorNormalizer.h" />
     <ClInclude Include="src\Resources\InitSprites.h" />
     <ClInclude Include="src\Input\BitArithmetics.h" />

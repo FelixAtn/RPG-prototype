@@ -1,6 +1,6 @@
 #pragma once
 #include "Entity/Entity resources/Animator.h"
-#include "Entity/Entity resources/Character.h"
+#include "Entity/Character.h"
 #include "Entity/Player/Player.h"
 #include "Entity/World/Enemy/EnemyEntity.h"
 

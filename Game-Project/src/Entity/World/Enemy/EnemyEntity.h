@@ -1,5 +1,5 @@
 #pragma once
-#include "Entity/Entity resources/Character.h"
+#include "Entity/Character.h"
 #include "Entity/Entity resources/Animator.h"
 
 class Enemy : public Character
@@ -20,6 +20,7 @@ protected:
 	sf::Texture m_EnemyText;
 	sf::Sprite m_Enemy;
 
+	bool isInit = false;
 	float m_DeltaTime;
 };
 

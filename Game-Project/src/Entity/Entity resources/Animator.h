@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include <SFML/Graphics.hpp>
-#include <Entity/Entity resources/Character.h>
+#include <Entity/Character.h>
 
 enum class CharacterState
 {

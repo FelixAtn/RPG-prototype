@@ -75,7 +75,7 @@
     <ClCompile Include="src\Entity\Entity.cpp">
       <Filter>Game</Filter>
     </ClCompile>
-    <ClCompile Include="src\Entity\Entity resources\Character.cpp" />
+    <ClCompile Include="src\Entity\Character.cpp" />
     <ClCompile Include="src\Entity\Player\Player.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -131,7 +131,7 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Entity\Player\Player.h" />
-    <ClInclude Include="src\Entity\Entity resources\Character.h" />
+    <ClInclude Include="src\Entity\Character.h" />
     <ClInclude Include="src\Entity\Entity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
