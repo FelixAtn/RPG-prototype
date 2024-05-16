@@ -1,8 +1,7 @@
 #pragma once
-#include "Entity/Entity resources/Animator.h"
-#include "Entity/Character.h"
 #include "Entity/Player/Player.h"
 #include "Entity/World/Enemy/EnemyEntity.h"
+
 
 class GameManager
 {
@@ -12,6 +11,7 @@ public:
 	~GameManager();
 
 private:
+	void Init();
 	void Update();
 	void WindowUpdate();
 	void Draw();
@@ -24,8 +24,9 @@ private:
 	sf::Clock m_Clock;
 	InputManager m_Input;
 	Window m_Window;
-
 	Player m_Player;
 	Enemy m_Foe;
+
+	//Book m_Ability;
 };
 

@@ -1,31 +1,28 @@
 #pragma once
-#include "Physics/CollisionManager.h"
-#include "SFML/Graphics.hpp"
+#include "Entity/Entity resources/SpriteManager.h"
+#include "Window/Window.h"
 #include "Input/InputManager.h"
-#include "Resources/Window/Window.h"
-#include "Resources/Loader.h"
-#include "iostream"
-#include <vector>
+#include "Physics/CollisionManager.h"
 
 class Character
 {
 public:
 	Character();
-	Character(sf::Texture& texture);
+	Character(Window& window, InputManager& input);
+virtual	~Character();
 
-
-private:
-	sf::Texture m_PlayerText;
-	sf::Texture m_EnemyText;
-
-	sf::Sprite m_Player;
-	sf::Sprite m_Enemy;
-	
 protected:
-	virtual void Init() = 0;
+	sf::Sprite* GetEnemy();
 	virtual	void Update(float deltaTime) = 0;
 	virtual	void Draw(Window& window) = 0;
-
+	virtual void Init() = 0;
+	
 protected:
-	Loader m_Loader;
+	CollisionManager m_Check;
+	SpriteManager& m_SpriteManager;
+	InputManager& m_Input;
+	Window& m_Window;
+
+	sf::Sprite* m_Player;
+	sf::Sprite* m_Enemy;
 };

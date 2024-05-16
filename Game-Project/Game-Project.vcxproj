@@ -163,48 +163,46 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Entity\Player\PlayerInput.cpp" />
+    <ClCompile Include="src\Entity\Entity resources\SpriteManager.cpp" />
+    <ClCompile Include="src\Entity\Entity resources\Collider.cpp" />
+    <ClCompile Include="src\Entity\Weapons\Book.cpp" />
     <ClCompile Include="src\Entity\World\World.cpp" />
-    <ClCompile Include="src\Entity\World\Friend\FriendlyEntity.cpp" />
     <ClCompile Include="src\Entity\Character.cpp" />
     <ClCompile Include="src\Physics\VectorNormalizer.cpp" />
     <ClCompile Include="src\Resources\InitSprites.cpp" />
     <ClCompile Include="src\Input\BitArithmetics.cpp" />
     <ClCompile Include="src\Entity\Entity resources\Animator.cpp" />
     <ClCompile Include="src\Physics\Physics.cpp" />
-    <ClCompile Include="src\Entity\World\Weapons\ProjectileEntity.cpp" />
-    <ClCompile Include="src\Game\GameSettings.cpp" />
+    <ClCompile Include="src\Entity\Weapons\Ability.cpp" />
     <ClCompile Include="src\Physics\CollisionManager.cpp" />
     <ClCompile Include="src\Input\InputManager.cpp" />
-    <ClCompile Include="src\Game\FSM - Learning\GameState.cpp" />
-    <ClCompile Include="src\Entity\World\Enemy\EnemyEntity.cpp" />
-    <ClCompile Include="src\Entity\Entity.cpp" />
+    <ClCompile Include="src\Entity\Enemy\EnemyEntity.cpp" />
     <ClCompile Include="src\Game\GameManager.cpp" />
     <ClCompile Include="src\Entity\Player\Player.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\Resources\Window\Window.cpp" />
-    <ClCompile Include="src\Game\FSM - Learning\SceneState.cpp" />
+    <ClCompile Include="src\Window\Window.cpp" />
     <ClCompile Include="src\Resources\Loader.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Entity\Player\PlayerInput.h" />
+    <ClInclude Include="src\Entity\Entity resources\SpriteManager.h" />
+    <ClInclude Include="src\Entity\Entity resources\Collider.h" />
+    <ClInclude Include="src\Entity\Weapons\Book.h" />
     <ClInclude Include="src\Entity\World\World.h" />
-    <ClInclude Include="src\Entity\World\Friend\FriendlyEntity.h" />
     <ClInclude Include="src\Entity\Character.h" />
     <ClInclude Include="src\Physics\VectorNormalizer.h" />
     <ClInclude Include="src\Resources\InitSprites.h" />
     <ClInclude Include="src\Input\BitArithmetics.h" />
     <ClInclude Include="src\Entity\Entity resources\Animator.h" />
     <ClInclude Include="src\Physics\Physics.h" />
-    <ClInclude Include="src\Entity\World\Weapons\ProjectileEntity.h" />
-    <ClInclude Include="src\Game\GameSettings.h" />
+    <ClInclude Include="src\Entity\Weapons\Ability.h" />
     <ClInclude Include="src\Physics\CollisionManager.h" />
     <ClInclude Include="src\Input\InputManager.h" />
-    <ClInclude Include="src\Game\FSM - Learning\GameState.h" />
-    <ClInclude Include="src\Entity\World\Enemy\EnemyEntity.h" />
-    <ClInclude Include="src\Entity\Entity.h" />
+    <ClInclude Include="src\Entity\Enemy\EnemyEntity.h" />
     <ClInclude Include="src\Game\GameManager.h" />
     <ClInclude Include="src\Entity\Player\Player.h" />
-    <ClInclude Include="src\Resources\Window\Window.h" />
-    <ClInclude Include="src\Game\FSM - Learning\SceneState.h" />
+    <ClInclude Include="src\Window\Window.h" />
     <ClInclude Include="src\Resources\Loader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

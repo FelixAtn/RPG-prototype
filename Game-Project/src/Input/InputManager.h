@@ -12,7 +12,7 @@ enum class Key
 	Up = 3,
 	Down = 4,
 	E = 5,
-	C = 7,
+	Click = 7,
 };
 
 class InputManager
