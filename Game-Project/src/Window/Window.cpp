@@ -39,34 +39,18 @@ void Window::EndDraw()
 {
 	m_WindowRenderer.display();
 }
-
+bool Window::IsRunning() 
+{
+	return m_WindowRenderer.isOpen();
+}
 sf::Vector2i& Window::GetPixelPosition()
 {
 	return m_PixelPosition;
 }
-
 sf::Vector2f& Window::GetWorldPosition()
 {
 	return m_WorldPosition;
 }
 
-bool Window::IsRunning() 
-{
-	return m_WindowRenderer.isOpen();
-}
 
 
-
-//sf::RenderWindow* Window::GetWindow() {}
-// void Window::InitWindow(int x, int y)
-// {
-// 		sf::VideoMode SetWindowSize(x, y);
-// 		m_WindowRenderer = new sf::RenderWindow(SetWindowSize, "Yuumi", sf::Style::Default);
-// 		m_WindowRenderer->setFramerateLimit(144);
-// 		m_WindowRenderer->setVerticalSyncEnabled(true);
-// }
-// 
-// sf::RenderWindow* Window::GetWindow()
-// {
-// 	return m_WindowRenderer;
-// }

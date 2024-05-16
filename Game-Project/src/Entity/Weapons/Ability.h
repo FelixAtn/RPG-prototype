@@ -2,7 +2,7 @@
 #include <iostream>
 #include "SFML/Graphics.hpp"
 #include "Resources/Loader.h"
-#include "Resources/Window/Window.h"
+#include "Window/Window.h"
 
 //Parent class
 class Ability

@@ -15,9 +15,8 @@ public:
 
 	sf::Vector2i& GetPixelPosition();
 	sf::Vector2f& GetWorldPosition();
-private:
 
-public:
+private:
 	sf::RenderWindow m_WindowRenderer;
 
 	sf::Vector2i m_PixelPosition;

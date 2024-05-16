@@ -1,4 +1,4 @@
-#include "EnemyEntity.h"
+#include "Enemy.h"
 
 
 Enemy::Enemy(Window& window, InputManager& input) : Character(window, input){}

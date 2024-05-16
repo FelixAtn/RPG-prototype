@@ -1,7 +1,7 @@
 #pragma once
 #include "Entity/Player/Player.h"
-#include "Entity/World/Enemy/EnemyEntity.h"
-
+#include "Entity/Enemy/Enemy.h"
+#include "Resources/FPS.h"
 
 class GameManager
 {
@@ -27,6 +27,7 @@ private:
 	Player m_Player;
 	Enemy m_Foe;
 
+	Fps m_Fps;
 	//Book m_Ability;
 };
 
