@@ -3,6 +3,7 @@
 #include "Window/Window.h"
 #include "Input/InputManager.h"
 #include "Physics/CollisionManager.h"
+#include "Entity/Entity resources/Animator.h"
 
 class Character
 {
@@ -25,4 +26,9 @@ protected:
 
 	sf::Sprite* m_Player;
 	sf::Sprite* m_Enemy;
+
+	int left;
+	int top;
+	int width;
+	int height;
 };

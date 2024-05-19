@@ -29,7 +29,7 @@ void Window::Update()
 }
 void Window::Clear()
 {
-	m_WindowRenderer.clear(sf::Color::Black);
+	m_WindowRenderer.clear(sf::Color::Cyan);
 }
 void Window::Draw(const sf::Drawable& drawable)
 {

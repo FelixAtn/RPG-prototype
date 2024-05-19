@@ -28,7 +28,6 @@ void GameManager::Update()
 	//m_Ability.Update(m_DeltaTime);
 	m_Input.Clear();
 	m_Fps.Update(m_DeltaTime);
-	
 }
 void GameManager::WindowUpdate()
 {
@@ -38,6 +37,7 @@ void GameManager::UpdateDeltaTime()
 {
 	m_DeltaTime = m_Clock.restart().asSeconds();
 }
+
 void GameManager::Draw()
 {
 	m_Window.Clear();

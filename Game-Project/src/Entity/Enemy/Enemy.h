@@ -15,6 +15,10 @@ public:
 	void Update(float deltaTime) override;
 
 private:
+	void Burn();
+
+private:
+	Animation m_Fire;
 	float m_DeltaTime;
 };
 

@@ -40,8 +40,6 @@ void SpriteManager::CreateSprites()
 }
 void SpriteManager::LoadTexture()
 {
-	m_Loader.Load(m_PlayerTexture, "mobss.png");
-	m_Loader.Load(m_EnemyTexture, "Fall (78x58).png");
+	m_Loader.Load(m_PlayerTexture, "idle.png");
+	m_Loader.Load(m_EnemyTexture, "480.png");
 }
-
-
