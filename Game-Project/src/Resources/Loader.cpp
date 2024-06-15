@@ -10,6 +10,7 @@ void Loader::Load(sf::Texture& desiredTexture, std::string fileName)
 	if (!desiredTexture.loadFromFile(m_FullPath + fileName))
 	{
 		std::cerr << ": failed to load.\n";
+		std::cout << m_FullPath;
 	}
 	else { std::cout << fileName << ": success.\n"; }
 }

@@ -4,7 +4,6 @@ void InputManager::Clear()
 {
 	clear.ClearByte();
 }
-
 void InputManager::Update()
 {
 	lastFrameKeys.SetMask(thisFrameKeys);
@@ -29,30 +28,24 @@ void InputManager::Update()
 		(sf::Keyboard::isKeyPressed(sf::Keyboard::E)));
 
 	thisFrameKeys.SetBit((int)Key::Click,
-		(sf::Mouse::isButtonPressed(sf::Mouse::Left)) ||
 		(sf::Mouse::isButtonPressed(sf::Mouse::Left)));
 }
 
-// Return true if the specified KEY is currently pressed - EXAMPLE A key:  1 << Position A
+// Return true if key is pressed - A key:  1 << Position A.
 bool InputManager::IsKeyPressed(Key keycode)
 {
 	return thisFrameKeys.GetBit((int)keycode);
 }
-
-// Return true if the key was just pressed - It is pressed CURRENT FRAME - BUT NOT - PREVIOUS FRAME.
 bool InputManager::IsKeyDown(Key keycode)
 {
 	bool lastFrame = lastFrameKeys.GetBit((int)keycode);
 	bool thisFrame = thisFrameKeys.GetBit((int)keycode);
 	return thisFrame && !lastFrame;
 }
-
-// Return true if the key was just RELEASED - It was pressed LAST FRAME - BUT NOT - CURRENT FRAME.
 bool InputManager::IsKeyUp(Key keycode)
 {
 	bool lastFrame = lastFrameKeys.GetBit((int)keycode);
 	bool thisFrame = thisFrameKeys.GetBit((int)keycode);
-	
 	return !thisFrame && lastFrame;
 }
 

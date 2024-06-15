@@ -1,34 +1,29 @@
 #include "Player.h"
-#include <math.h>
 
-
-//************************************
-// Method:    m_Animation
-// FullName:  Player::m_Animation
-// Access:    private 
-// Returns:   
-// Qualifier: : Character(window, inputManager), m_Animation(m_Player) m_Timer(0), m_DrawPerFrame(0.07f), m_Idle(0), m_IdleTop(0)
-// Parameter: Window & window
-// Parameter: InputManager & inputManager
-//************************************
-Player::Player(Window& window, InputManager& inputManager) : Character(window, inputManager),
-m_Timer(0), m_DrawPerFrame(0.07f), m_Idle(m_Player), m_Attack(m_Player), m_Left(m_Player), 
-m_Right(m_Player), m_Up(m_Player), m_Down(m_Player)
-{
-}
-
+Player::Player(Window& window, InputManager& inputManager) : Character(window, inputManager)
+, m_MovementSpeed(400), m_DeltaTime(0), m_Animate(m_Player), m_IsColliding(false) {}
 Player::~Player(){}
 
-
+// Initializers
 void Player::Init()
 {
-	Load();
+	if (m_Player)
+	{
+		m_Player->setPosition(700, 700);
+		m_Player->scale(1, 1);
+	}
 }
+
+
+// Player Engine
 void Player::Update(float deltaTime)
 {
 	m_DeltaTime = deltaTime;
-	Input();
+	m_Animate.Idle(deltaTime);
+
+	CheckColission();
 	ValidateMove();
+	Input();
 }
 void Player::Draw(Window& window)
 {
@@ -37,120 +32,75 @@ void Player::Draw(Window& window)
 	window.Draw(*m_Player);
 	}
 }
-void Player::Input()
+void Player::CheckColission()
 {
-	AnimateIdle();
-	sf::Vector2f move(0.f, 0.f);
-	sf::Vector2f currentPosition = m_Player->getPosition();
-	
-	m_WalkSpeed = 500;
-	if (m_Input.IsKeyPressed(Key::Right))
+	std::vector<sf::Sprite*> sprites;
+	sprites.push_back(m_Enemy);
+	sprites.push_back(m_Blocks);
+	sprites.push_back(m_Tiles);
+
+	for (auto& sprite : sprites)
 	{
-		AnimateRight();
-		move.x = +m_WalkSpeed;
+		if (m_Check.IsColliding(*m_Player, *sprite))
+		{
+			m_IsColliding = true;
+			m_Clamp = m_Check.GetClampValue();
+		}
 	}
-	else if (m_Input.IsKeyPressed(Key::Left))
-	{
-		AnimateLeft();
-		move.x = -m_WalkSpeed;
-	}
-	if (m_Input.IsKeyPressed(Key::Down))
-	{
-		AnimateDown();
-		move.y = +m_WalkSpeed;
-	}
-	else if (m_Input.IsKeyPressed(Key::Up))
-	{
-		AnimateUp();
-		move.y = -m_WalkSpeed;
-	}
-	if (m_Input.IsKeyPressed(Key::Click))
-	{
-		AnimateAttack();
-	}
-	if(m_Input.IsKeyPressed(Key::E))
-	{
-		AnimateDown();
-	}
-	move *= m_DeltaTime;
-	m_NewPosition = currentPosition + move;
 }
 void Player::ValidateMove()
 {
-	if (!m_Check.IsColliding(*m_Player, *m_Enemy))
-	{ 
-		m_Player->setPosition(m_NewPosition);
+	if(m_IsColliding)
+	{
+		m_Player->setPosition(m_NewPosition + m_Clamp);
 	}
-	else
+	else 
 	{
 		m_Player->setPosition(m_NewPosition);
 	}
+	m_Clamp = { 0,0 };
 }
-void Player::Load()
+void Player::Input()
 {
-	if (m_Player)
+	sf::Vector2f move(0.f, 0.f);
+	sf::Vector2f currentPosition = m_Player->getPosition();
+
+
+	// Movement
+	if (m_Input.IsKeyPressed(Key::Right))
 	{
-		m_Player->setPosition(700, 700);
-		m_Player->setTextureRect(sf::IntRect(0, 0, 512, 512));
-		m_Player->scale(3, 3);
+		m_Animate.WalkRight(m_DeltaTime);
+		move.x += m_MovementSpeed;	
 	}
-}
+	else if (m_Input.IsKeyPressed(Key::Left))
+	{
+		m_Animate.WalkLeft(m_DeltaTime);
+		move.x -= m_MovementSpeed;
+	}
+	if (m_Input.IsKeyPressed(Key::Down))
+	{
+		m_Animate.WalkDown(m_DeltaTime);
+		move.y += m_MovementSpeed;
+	}
+	else if (m_Input.IsKeyPressed(Key::Up))
+	{
+		m_Animate.WalkUp(m_DeltaTime);
+		move.y -= m_MovementSpeed;
+	}
 
 
-void Player::AnimateIdle()
-{
-	m_Idle.Update(m_DeltaTime);
-	m_Idle.AddIntRect({ sf::IntRect(0, 0, 192, 192), 0.1f });
-	m_Idle.AddIntRect({ sf::IntRect(192, 0, 192, 192), 0.07f });
-	m_Idle.AddIntRect({ sf::IntRect(384, 0, 192, 192), 0.07f });
-	m_Idle.AddIntRect({ sf::IntRect(576, 0, 192, 192), 0.07f });
-	m_Idle.AddIntRect({ sf::IntRect(768, 0, 192, 192), 0.07f });
-	m_Idle.AddIntRect({ sf::IntRect(960, 0, 192, 192), 0.2f });
+	// Actions
+	if (m_Input.IsKeyPressed(Key::Click))
+	{
+		m_Animate.Attack(m_DeltaTime);
+	}
+
+	// Calculus
+	move *= m_DeltaTime;
+	m_NewPosition = currentPosition + move;
 }
-void Player::AnimateAttack()
-{
-	m_Attack.Update(m_DeltaTime);
-	m_Attack.AddIntRect({ sf::IntRect(0, 576, 192, 192), 0.1f });
-	m_Attack.AddIntRect({ sf::IntRect(192, 576, 192, 192), 0.07f });
-	m_Attack.AddIntRect({ sf::IntRect(384, 576, 192, 192), 0.07f });
-	m_Attack.AddIntRect({ sf::IntRect(576, 576, 192, 192), 0.07f });
-	m_Attack.AddIntRect({ sf::IntRect(768, 576, 192, 192), 0.07f });
-	m_Attack.AddIntRect({ sf::IntRect(960, 576, 192, 192), 0.2f });
-}
-void Player::AnimateRight()
-{
-	m_Right.Update(m_DeltaTime);
-	m_Right.AddIntRect({ sf::IntRect(192, 192, 192, 192), 0.07f });
-	m_Right.AddIntRect({ sf::IntRect(384, 192, 192, 192), 0.07f });
-	m_Right.AddIntRect({ sf::IntRect(576, 192, 192, 192), 0.07f });
-	m_Right.AddIntRect({ sf::IntRect(768, 192, 192, 192), 0.07f });
-	m_Right.AddIntRect({ sf::IntRect(960, 192, 192, 192), 0.2f });
-}
-void Player::AnimateLeft()
-{
-	m_Left.Update(m_DeltaTime);
-	m_Left.AddIntRect({ sf::IntRect(1152, 192, 192, 192), 0.07f });
-	m_Left.AddIntRect({ sf::IntRect(1334, 192, 192, 192), 0.07f });
-	m_Left.AddIntRect({ sf::IntRect(1536, 192, 192, 192), 0.07f });
-	m_Left.AddIntRect({ sf::IntRect(1728, 192, 192, 192), 0.07f });
-	m_Left.AddIntRect({ sf::IntRect(1920, 192, 192, 192), 0.2f });
-}
-void Player::AnimateUp()
-{
-	m_Up.Update(m_DeltaTime);
-	m_Up.AddIntRect({ sf::IntRect(0, 1152, 192, 192), 0.1f });
-	m_Up.AddIntRect({ sf::IntRect(192, 1152, 192, 192), 0.1f });
-	m_Up.AddIntRect({ sf::IntRect(384, 1152, 192, 192), 0.1f });
-}
-void Player::AnimateDown()
-{
-	m_Down.Update(m_DeltaTime);
-	m_Down.AddIntRect({ sf::IntRect(0, 576, 192, 192), 0.07f });
-	m_Down.AddIntRect({ sf::IntRect(192, 576, 192, 192), 0.07f });
-	m_Down.AddIntRect({ sf::IntRect(384, 576, 192, 192), 0.07f });
-// 	m_Down.AddIntRect({ sf::IntRect(1728, 0, 192, 192), 0.07f });
-// 	m_Down.AddIntRect({ sf::IntRect(1920, 0, 192, 192), 0.2f });;
-}
+
+// Getters, setters
 sf::Sprite* Player::GetPlayer()
 {
 	return m_Player;

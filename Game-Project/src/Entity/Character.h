@@ -3,32 +3,30 @@
 #include "Window/Window.h"
 #include "Input/InputManager.h"
 #include "Physics/CollisionManager.h"
-#include "Entity/Entity resources/Animator.h"
+#include "Entity/Entity resources/SpriteAnimation.h"
 
 class Character
 {
 public:
-	Character();
 	Character(Window& window, InputManager& input);
-virtual	~Character();
+	virtual	~Character();
 
 protected:
-	sf::Sprite* GetEnemy();
 	virtual	void Update(float deltaTime) = 0;
 	virtual	void Draw(Window& window) = 0;
 	virtual void Init() = 0;
 	
 protected:
-	CollisionManager m_Check;
 	SpriteManager& m_SpriteManager;
+	CollisionManager m_Check;
 	InputManager& m_Input;
 	Window& m_Window;
 
 	sf::Sprite* m_Player;
 	sf::Sprite* m_Enemy;
 
-	int left;
-	int top;
-	int width;
-	int height;
+	sf::Sprite* m_Tiles;
+	sf::Sprite* m_Blocks;
+
+	std::vector<sf::Sprite*> m_TileTest;
 };

@@ -35,9 +35,11 @@
 *.vs
 Assets
 bin
-.vshistory
-Game-Project/src/Entity/World/Enemy/.vshistory
-Game-Project/src/Entity/World/Friend/.vshistory
-Game-Project/src/Entity/World/Enemy/.vshistory
-Game-Project/src/Entity/World/Enemy/.vshistory
-Game-Project/src/Entity/World/Enemy/.vshistory
+
+
+
+Game-Project/src/Entity/Enemy/.vshistory
+Game-Project/src/Entity/Entity resources/.vshistory
+Game-Project/src/Entity/Player/.vshistory
+Game-Project/src/Entity/Weapons/.vshistory
+Game-Project/src/Entity/World/.vshistory

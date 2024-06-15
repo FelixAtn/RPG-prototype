@@ -5,10 +5,9 @@
 class Fps 
 {
 public:
-	Fps();
 	Fps(Window& window);
 	void Update(float deltaTime);
-	void Draw(Window& window);
+	void Draw(Window& window) const;
 
 private:
 	sf::Text m_FpsText;

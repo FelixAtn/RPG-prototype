@@ -21,10 +21,28 @@ sf::Sprite* SpriteManager::GetSprite(size_t index)
 	}
 	return nullptr;
 }
+
+sf::Sprite* SpriteManager::GetTiles(size_t index)
+{
+	if (index < m_Tiles.size())
+	{
+		return m_Tiles[index].get();
+	}
+	return nullptr;
+}
+
 SpriteManager& SpriteManager::getInstance()
 {
 	static SpriteManager instance;
 	return instance;
+}
+void SpriteManager::LoadTexture()
+{
+	m_Loader.Load(m_PlayerTexture, "Ninja-Complete.png");
+	m_Loader.Load(m_EnemyTexture, "g_cast.png");
+
+	m_Loader.Load(m_TilesTexture, "tile_0000.png");
+	m_Loader.Load(m_Blocks, "blo.png");
 }
 void SpriteManager::CreateSprites()
 {
@@ -37,9 +55,12 @@ void SpriteManager::CreateSprites()
 
 	m_Sprites.push_back(std::make_unique<sf::Sprite>(std::move(playerSprite)));
 	m_Sprites.push_back(std::make_unique<sf::Sprite>(std::move(enemySprite)));
-}
-void SpriteManager::LoadTexture()
-{
-	m_Loader.Load(m_PlayerTexture, "idle.png");
-	m_Loader.Load(m_EnemyTexture, "480.png");
+
+	sf::Sprite tiles;
+	tiles.setTexture(m_TilesTexture);
+	m_Tiles.push_back(std::make_unique<sf::Sprite>(std::move(tiles)));
+
+	sf::Sprite blocks;
+	blocks.setTexture(m_Blocks);
+	m_Tiles.push_back(std::make_unique<sf::Sprite>(std::move(blocks)));
 }

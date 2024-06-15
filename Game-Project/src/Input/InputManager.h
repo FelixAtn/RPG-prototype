@@ -12,15 +12,14 @@ enum class Key
 	Up = 3,
 	Down = 4,
 	E = 5,
-	Click = 7,
+	Click = 6,
 };
 
 class InputManager
 {
 public:
 	void Clear();
-	void Update(); // Method responsible for polling the Keys
-
+	void Update(); 
 
 private:
 	BitArithmetics thisFrameKeys; // to store this frame

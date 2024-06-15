@@ -1,18 +1,18 @@
 #pragma once
 #include <iostream>
 #include <SFML/Graphics.hpp>
-#include <Entity/Character.h>
 
 struct AnimationFrame
 {
 	sf::IntRect m_IntRect;
 	float m_Duration; // seconds
 };
-class Animation 
+
+class Animator
 {
 public:
-	Animation(sf::Sprite* sprite);
-	virtual ~Animation(); 
+	Animator(sf::Sprite* sprite);
+	virtual ~Animator(); 
 
 	void Update(float deltaTime);
 	void AddIntRect(AnimationFrame&& m_IntRect);

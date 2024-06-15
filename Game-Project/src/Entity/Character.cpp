@@ -7,11 +7,13 @@ void Character::Init()
 {
 	m_Player = m_SpriteManager.GetSprite(0);
 	m_Enemy = m_SpriteManager.GetSprite(1);
+
+	m_Tiles = m_SpriteManager.GetTiles(0);
+	m_Blocks = m_SpriteManager.GetTiles(1);
+
+	m_TileTest.push_back(m_Tiles);
+	m_TileTest.push_back(m_Blocks);
 }
-sf::Sprite* Character::GetEnemy()
-{
-	return m_Enemy;
-}
-void Character::Update(float deltaTime){}
-void Character::Draw(Window& window){}
+
+
 

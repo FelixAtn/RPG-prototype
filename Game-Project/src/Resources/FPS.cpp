@@ -1,6 +1,7 @@
 #include "FPS.h"
 #include <iostream>
-#include <string.h>
+#include <cstring>
+
 Fps::Fps(Window& window) : m_Timer(0), m_DrawPerFrame(0.1f)
 {
 	if (m_Font.loadFromFile("Vegur-Yg1a.otf"))
@@ -11,7 +12,6 @@ Fps::Fps(Window& window) : m_Timer(0), m_DrawPerFrame(0.1f)
 	}
 }
 
-Fps::Fps(){}
 
 
 void Fps::Update(float deltaTime)
@@ -26,7 +26,7 @@ void Fps::Update(float deltaTime)
 	m_Timer = 0;
 	}
 }
-void Fps::Draw(Window& window)
+void Fps::Draw(Window& window) const
 {
 	window.Draw(m_FpsText);
 }

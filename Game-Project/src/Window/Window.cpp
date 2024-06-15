@@ -1,11 +1,10 @@
 #include "Window.h"
 
-Window::Window() : m_WindowRenderer(sf::VideoMode(1920, 1080), "yuumi", sf::Style::Default), 
+Window::Window() : m_WindowRenderer(sf::VideoMode(1440, 1080), "yuumi", sf::Style::Default), 
 m_PixelPosition(sf::Mouse::getPosition(m_WindowRenderer)), m_WorldPosition(m_WindowRenderer.mapPixelToCoords(m_PixelPosition))
 {
 	m_WindowRenderer.setVerticalSyncEnabled(true);
 }
-
 Window::~Window(){}
 
 void Window::Update()
@@ -51,6 +50,9 @@ sf::Vector2f& Window::GetWorldPosition()
 {
 	return m_WorldPosition;
 }
-
+void Window::setWindowView(sf::View view)
+{
+	m_WindowRenderer.setView(view);
+}
 
 

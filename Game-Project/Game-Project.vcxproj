@@ -98,7 +98,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)\Dependencies\lib\</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)\Dependencies\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-system-d.lib;sfml-window-d.lib;sfml-graphics-d.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -110,8 +110,9 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)\Dependencies\include; $(SolutionDir)\Game-Project\src\Game;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalUsingDirectories>$(SolutionDir)\src\Entity;$(SolutionDir)\src;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Dependencies\include; $(SolutionDir)\Game-Project\src\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalUsingDirectories>
+      </AdditionalUsingDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>Default</LanguageStandard_C>
     </ClCompile>
@@ -120,7 +121,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)\Dependencies\lib\</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)\Dependencies\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-system.lib;sfml-window.lib;sfml-graphics.lib;sfml-audio.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -136,7 +137,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)\Dependencies\lib\</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)\Dependencies\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-system-d.lib;sfml-window-d.lib;sfml-graphics-d.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -148,8 +149,9 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)\Dependencies\include; $(SolutionDir)\Game-Project\src\Game;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalUsingDirectories>$(SolutionDir)\src\Entity;$(SolutionDir)\src;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Dependencies\include; $(SolutionDir)\Game-Project\src\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalUsingDirectories>
+      </AdditionalUsingDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>Default</LanguageStandard_C>
     </ClCompile>
@@ -158,24 +160,21 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)\Dependencies\lib\</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)\Dependencies\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-system.lib;sfml-window.lib;sfml-graphics.lib;sfml-audio.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Entity\Entity resources\SpriteAnimation.cpp" />
     <ClCompile Include="src\Resources\FPS.cpp" />
     <ClCompile Include="src\Entity\Player\PlayerInput.cpp" />
     <ClCompile Include="src\Entity\Entity resources\SpriteManager.cpp" />
-    <ClCompile Include="src\Entity\Entity resources\Collider.cpp" />
-    <ClCompile Include="src\Entity\Weapons\Book.cpp" />
     <ClCompile Include="src\Entity\World\World.cpp" />
     <ClCompile Include="src\Entity\Character.cpp" />
     <ClCompile Include="src\Physics\VectorNormalizer.cpp" />
     <ClCompile Include="src\Resources\InitSprites.cpp" />
     <ClCompile Include="src\Input\BitArithmetics.cpp" />
     <ClCompile Include="src\Entity\Entity resources\Animator.cpp" />
-    <ClCompile Include="src\Physics\Physics.cpp" />
-    <ClCompile Include="src\Entity\Weapons\Ability.cpp" />
     <ClCompile Include="src\Physics\CollisionManager.cpp" />
     <ClCompile Include="src\Input\InputManager.cpp" />
     <ClCompile Include="src\Entity\Enemy\Enemy.cpp" />
@@ -185,21 +184,19 @@
     <ClCompile Include="src\Window\Window.cpp" />
     <ClCompile Include="src\Resources\Loader.cpp" />
     <ClCompile Include="Text.cpp" />
+    <ClCompile Include="src\Entity\World\Tilemap.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Entity\Entity resources\SpriteAnimation.h" />
     <ClInclude Include="src\Resources\FPS.h" />
     <ClInclude Include="src\Entity\Player\PlayerInput.h" />
     <ClInclude Include="src\Entity\Entity resources\SpriteManager.h" />
-    <ClInclude Include="src\Entity\Entity resources\Collider.h" />
-    <ClInclude Include="src\Entity\Weapons\Book.h" />
     <ClInclude Include="src\Entity\World\World.h" />
     <ClInclude Include="src\Entity\Character.h" />
     <ClInclude Include="src\Physics\VectorNormalizer.h" />
     <ClInclude Include="src\Resources\InitSprites.h" />
     <ClInclude Include="src\Input\BitArithmetics.h" />
     <ClInclude Include="src\Entity\Entity resources\Animator.h" />
-    <ClInclude Include="src\Physics\Physics.h" />
-    <ClInclude Include="src\Entity\Weapons\Ability.h" />
     <ClInclude Include="src\Physics\CollisionManager.h" />
     <ClInclude Include="src\Input\InputManager.h" />
     <ClInclude Include="src\Entity\Enemy\Enemy.h" />
@@ -208,6 +205,7 @@
     <ClInclude Include="src\Window\Window.h" />
     <ClInclude Include="src\Resources\Loader.h" />
     <ClInclude Include="Text.h" />
+    <ClInclude Include="src\Entity\World\Tilemap.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

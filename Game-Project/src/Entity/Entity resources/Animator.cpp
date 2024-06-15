@@ -1,13 +1,12 @@
 #include "Animator.h"
-#include "Input\BitArithmetics.h"
 
-Animation::Animation(sf::Sprite* sprite) : m_Sprite(*sprite)
+Animator::Animator(sf::Sprite* sprite) : m_Sprite(*sprite), m_Timer(0), m_IntRectLenght(0)
 {
 	m_IntRectLenght = m_Timer;
 }
-Animation::~Animation(){}
+Animator::~Animator(){}
 
-void Animation::Update(float deltaTime)
+void Animator::Update(float deltaTime)
 {
 	m_Timer += deltaTime;
 	float time = m_Timer;
@@ -22,15 +21,12 @@ void Animation::Update(float deltaTime)
 		}
 	}
 }
-void Animation::AddIntRect(AnimationFrame&& frameRect)
+void Animator::AddIntRect(AnimationFrame&& frameRect)
 {
 	m_IntRectLenght += frameRect.m_Duration;
-	m_AnimationRect.push_back(std::move(frameRect));
+	m_AnimationRect.push_back(frameRect);
 }
-const double Animation::GetTime() const
+const double Animator::GetTime() const
 {
 	return m_Timer;
 }
-
-
-
