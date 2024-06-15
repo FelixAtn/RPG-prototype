@@ -1,9 +1,9 @@
 #include "SpriteAnimation.h"
 
+// Player
 PlayerAnimation::PlayerAnimation(sf::Sprite* sprite) 
 : m_Idle(sprite), m_Attack(sprite), m_Left(sprite), m_Right(sprite), m_Up(sprite), m_Down(sprite){}
 PlayerAnimation::~PlayerAnimation() {}
-
 void PlayerAnimation::Idle(float deltaTime)
 {
 	m_Idle.Update(deltaTime);
@@ -91,16 +91,16 @@ void PlayerAnimation::WalkUp(float deltaTime)
 	}
 }
 
+
+// Enemy
 EnemyAnimation::EnemyAnimation(sf::Sprite* sprite) : m_Idle(sprite)
 {
 
 }
-
 EnemyAnimation::~EnemyAnimation()
 {
 
 }
-
 void EnemyAnimation::Idle(float deltaTime)
 {
 	m_Idle.Update(deltaTime);
@@ -116,3 +116,11 @@ void EnemyAnimation::Idle(float deltaTime)
 		m_Idle.AddIntRect({ sf::IntRect(left, top, width, height), 0.5f });
 	}
 }
+
+
+
+// NPC
+
+
+
+// Environment / WOrld
