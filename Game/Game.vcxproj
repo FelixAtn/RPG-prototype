@@ -159,6 +159,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\GameMode\Menu\Settings\Keybinds.cpp" />
     <ClCompile Include="src\GameMode\Menu\Settings\AudioSettings.cpp" />
     <ClCompile Include="src\GameMode\Menu\Settings\Settings.cpp" />
     <ClCompile Include="src\GameMode\Menu\Settings\DisplaySettings.cpp" />
@@ -167,17 +168,16 @@
     <ClCompile Include="src\GameMode\Menu\UI\Button.cpp" />
     <ClCompile Include="src\Input\Keyboard.cpp" />
     <ClCompile Include="src\Input\Mouse.cpp" />
-    <ClCompile Include="src\Entity\Animation\AnimationComponent.cpp" />
     <ClCompile Include="src\Entity\Animation\AnimationManager.cpp" />
     <ClCompile Include="src\Window\Camera.cpp" />
     <ClCompile Include="src\GameMode\Play\PlayGame.cpp" />
     <ClCompile Include="src\GameMode\Menu\MainMenu.cpp" />
     <ClCompile Include="src\Entity\Npc\Pharmacist.cpp" />
     <ClCompile Include="src\Entity\Npc\Blacksmith.cpp" />
-    <ClCompile Include="src\Entity\Npc.cpp" />
+    <ClCompile Include="src\Entity\Npc\Npc.cpp" />
     <ClCompile Include="src\Entity\Enemy\Enemy.cpp" />
     <ClCompile Include="src\Entity\Character.cpp" />
-    <ClCompile Include="src\Entity\Player\Components\PlayerMovementComponent.cpp" />
+    <ClCompile Include="src\Entity\Player\Components\AnimationComponent.cpp" />
     <ClCompile Include="src\Entity\Player\Player.cpp" />
     <ClCompile Include="src\Entity\Entity.cpp" />
     <ClCompile Include="src\Input\Mask.cpp" />
@@ -195,6 +195,7 @@
     <ClCompile Include="src\GameStates\StateMachine.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\GameMode\Menu\Settings\Keybinds.h" />
     <ClInclude Include="src\GameMode\Menu\Settings\AudioSettings.h" />
     <ClInclude Include="src\GameMode\Menu\Settings\Settings.h" />
     <ClInclude Include="src\GameMode\Menu\Menu.h" />
@@ -204,17 +205,16 @@
     <ClInclude Include="src\GameMode\Menu\UI\Button.h" />
     <ClInclude Include="src\Input\Keyboard.h" />
     <ClInclude Include="src\Input\Mouse.h" />
-    <ClInclude Include="src\Entity\Animation\AnimationComponent.h" />
     <ClInclude Include="src\Entity\Animation\AnimationManager.h" />
     <ClInclude Include="src\Window\Camera.h" />
     <ClInclude Include="src\GameMode\Play\PlayGame.h" />
     <ClInclude Include="src\GameMode\Menu\MainMenu.h" />
     <ClInclude Include="src\Entity\Npc\Pharmacist.h" />
     <ClInclude Include="src\Entity\Npc\Blacksmith.h" />
-    <ClInclude Include="src\Entity\Npc.h" />
+    <ClInclude Include="src\Entity\Npc\Npc.h" />
     <ClInclude Include="src\Entity\Enemy\Enemy.h" />
     <ClInclude Include="src\Entity\Character.h" />
-    <ClInclude Include="src\Entity\Player\Components\PlayerMovementComponent.h" />
+    <ClInclude Include="src\Entity\Player\Components\AnimationComponent.h" />
     <ClInclude Include="src\Entity\Player\Player.h" />
     <ClInclude Include="src\Entity\Entity.h" />
     <ClInclude Include="src\Input\Mask.h" />

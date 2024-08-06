@@ -22,12 +22,17 @@ private:
 	sf::Sprite m_SpriteButton; 
 	std::string m_Text;
 	sf::Text m_TextOnButton;
-
 	sf::Font font;
 
 	sf::Vector2f m_ButtonCenter;
 	sf::Vector2f m_TextCenter; 
 
 	bool isCursorOnButton;
+
+
+	int m_xRect;
+	int m_yRect;
+	int m_xSize;
+	int m_ySize;
 };
 

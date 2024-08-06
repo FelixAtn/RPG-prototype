@@ -1,5 +1,5 @@
 #pragma once
-#include "Entity/Npc.h"
+#include "Npc.h"
 
 class Pharmacist : public Npc
 {

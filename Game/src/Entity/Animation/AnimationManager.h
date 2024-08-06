@@ -15,6 +15,7 @@ public:
 		sf::IntRect rect;
 		float m_AnimationSpeed;
 	};
+
 	void AddAnimation(int xStartFrame, int xEndFrame, int row, int width, int height, float animationSpeed);
 	void AddFrame(int x, int y, int width, int height, float frameSpeed);
 	void Update(float deltaTime, bool isLooping);

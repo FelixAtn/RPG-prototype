@@ -10,6 +10,7 @@ public:
 	void UpdateData(Keyboard& input, float deltaTime) override {};
 	void Render(Window& window) override {};
 
+	void SetVelocity(sf::Vector2f vel);
 	void SetName(const std::string& name); 
 	void SetDamage(int damage); 
 	void SetHp(int health); 
@@ -19,6 +20,7 @@ public:
 	void SetAttackSpeed(float attackSpeed); 
 	void SetMovementSpeed(float movementSpeed); 
 
+	sf::Vector2f Getvelocity() const;
 	std::string GetName() const; 
 	int GetDamage() const; 
 	int GetHp() const; 
@@ -29,6 +31,7 @@ public:
 	float GetMovementSpeed() const;
 
 protected:
+	sf::Vector2f m_MovementDirection;
 	sf::Vector2f m_Velocity;
 	float m_Exp;
 	float m_Cooldown;

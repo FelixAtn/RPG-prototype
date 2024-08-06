@@ -2,20 +2,28 @@
 
 
 Character::Character()
-	: m_Velocity(0.f,0.f)
-	, m_Exp(0.0f)
-	, m_Cooldown(0.0f)
-	, m_Attackspeed(0.0f)
-	, m_MovementSpeed(0.0f)
-	, m_Level(0)
-	, m_Hp(0)
-	, m_Damage(0)
-{}
+{
+	m_MovementDirection = { 0.f, 0.f };
+	m_Velocity = { 0.f, 0.f };
+	m_Exp =0.f;
+	m_Cooldown = 0.f;
+	m_Attackspeed = 0.f;
+	m_MovementSpeed = 0.f;
+	m_Level = 0;
+	m_Hp = 0;
+	m_Damage = 0;
+}
 
 Character::~Character()
 {}
 
 #pragma region SETTER
+
+void Character::SetVelocity(sf::Vector2f vel)
+{
+	m_Velocity = vel;
+}
+
 void Character::SetName(const std::string& name)
 {
 	m_Name = name; 
@@ -47,6 +55,11 @@ void Character::SetCooldown(float coolDown)
 void Character::SetMovementSpeed(float movementSpeed)
 {
 	m_MovementSpeed = movementSpeed;
+}
+
+sf::Vector2f Character::Getvelocity() const
+{
+	return m_Velocity;
 }
 
 void Character::SetAttackSpeed(float attackSpeed)

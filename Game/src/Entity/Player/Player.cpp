@@ -4,33 +4,22 @@
 #include "Physics/VectorMath.h"
 
 
-Player::Player(const std::string& playerName, const std::string& playerType) : m_Component(GetSprite())
+Player::Player(const std::string& playerName, const std::string& playerType)
+	: m_Animation(GetSprite())
 {
 	std::cout << "Init: " << playerName << "\n";
 	SetName(playerName);
-	SetTexture(playerType); 
+	SetTexture(playerType);
 	SetScale(1, 1);
 	SetRect(0, 0, 64, 64);
 	SetMovementSpeed(80.f);
 	SetPosition(200, 500);
 }
 
-Player::~Player() {}
-
-void Player::UpdateInput(Keyboard& keyboardInput, Mouse& mouseInput, float deltaTime)
-{
-
-}
-
-void Player::UpdateAnimation(float deltaTime)
-{
-	
-}
-
 void Player::UpdateData(Keyboard& input, float deltaTime)
 {
-	m_Component.UpdateInput(input, m_Velocity, GetMovementSpeed(), deltaTime);
-	m_Component.UpdateAnimation(deltaTime);
+	Movement(input, deltaTime);
+	Animations(input, deltaTime);
 }
 
 void Player::Render(Window& window)
@@ -38,10 +27,51 @@ void Player::Render(Window& window)
 	window.Render(m_Sprite); 
 }
 
-
-
-
-void Player::SetVelocity(sf::Vector2f velocity)
+void Player::Movement(InputManager& input, float deltaTime)
 {
-	m_Velocity = velocity;
+	input.Update();
+	m_MovementDirection = sf::Vector2f(0.f, 0.f);
+
+	if (input.IsKeyDown(Key::W))
+	{
+		m_MovementDirection.y -= 1.f;
+	}
+
+	if (input.IsKeyDown(Key::S))
+	{
+		m_MovementDirection.y += 1.f;
+	}
+
+	if (input.IsKeyDown(Key::D))
+	{
+		m_MovementDirection.x += 1.f;
+	}
+
+	if (input.IsKeyDown(Key::A))
+	{
+		m_MovementDirection.x -= 1.f;
+	}
+
+	if (m_MovementDirection.x == 0.f && m_MovementDirection.y == 0.f)
+	{
+		return;
+	}
+
+	m_MovementDirection = VectorMath::Math::GetNormalizedVector(m_MovementDirection);
+	sf::Vector2f m_PlayerPosition = GetSpritePosition();
+
+	m_PlayerPosition += m_MovementDirection * m_MovementSpeed * deltaTime;
+	sf::Vector2f positionAfterMoving = m_PlayerPosition + m_Velocity;
+
+	m_Sprite.setPosition(positionAfterMoving);
+	m_Velocity = { 0,0 };
+}
+
+void Player::Animations(Keyboard& input, float deltaTime)
+{
+	bool isAttacking = input.IsKeyPressed(Key::E);
+	sf::Vector2f direction = m_MovementDirection;
+
+	m_Animation.MovementAnimation(direction, deltaTime);
+	m_Animation.AttackAnimation(isAttacking, deltaTime);
 }
