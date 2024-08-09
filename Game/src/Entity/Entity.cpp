@@ -44,6 +44,13 @@ const sf::Sprite& Entity::GetSprite() const
 {
 	return m_Sprite;
 }
+
+sf::Vector2f Entity::GetSpriteCenter() const
+{
+	sf::Vector2f center = m_Sprite.getGlobalBounds().getSize() * 0.5f;
+	return center;
+}
+
 sf::Vector2f Entity::GetSpritePosition() const
 {
 	return m_Sprite.getPosition();
@@ -59,7 +66,7 @@ sf::Vector2f Entity::GetScale() const
 	return m_Sprite.getScale();
 }
 
-sf::IntRect Entity::GetRect() const
+const sf::IntRect Entity::GetRect() const
 {
 	return m_Sprite.getTextureRect();
 }
@@ -74,7 +81,7 @@ sf::Vector2f Entity::GetSize() const
 	return m_Sprite.getGlobalBounds().getSize();
 }
 
-sf::FloatRect Entity::GetBounds() const
+const sf::FloatRect Entity::GetBounds() const
 {
 	return m_Sprite.getGlobalBounds();
 }

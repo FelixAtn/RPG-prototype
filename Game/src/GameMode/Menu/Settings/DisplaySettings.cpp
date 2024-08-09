@@ -29,11 +29,11 @@ void DisplaySettings::Update(Cursor& cursor, Keyboard& keyboard, float deltaTime
 	CheckChosenButton(cursor);
 }
 
-void DisplaySettings::Draw(Window& window)
+void DisplaySettings::Render(Window& window)
 {
 	for (const auto& id : m_Button)
 	{
-		id.second->Draw(window);
+		id.second->Render(window);
 	}
 }
 

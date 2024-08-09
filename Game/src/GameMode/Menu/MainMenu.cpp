@@ -28,7 +28,7 @@ void MainMenu::Update(Cursor& cursor, Keyboard& keyboard, float deltaTime)
 	UpdateButton(cursor);
 	CheckChosenButton(cursor);
 }
-void MainMenu::Draw(Window& window)
+void MainMenu::Render(Window& window)
 {
 	window.Render(m_Sprite);
 	DrawButton();

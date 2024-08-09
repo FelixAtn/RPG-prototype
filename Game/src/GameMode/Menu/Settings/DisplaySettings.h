@@ -17,7 +17,7 @@ public:
 	void Create() final;
 	void Destroy() final;
 	void Update(Cursor& cursor, Keyboard& keyboard, float deltaTime) final;
-	void Draw(Window& window) final;
+	void Render(Window& window) final;
 	void CheckChosenButton(Cursor& cursor);
 
 };

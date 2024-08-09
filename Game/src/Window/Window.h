@@ -10,7 +10,7 @@ public:
 	void ChangeResolution(int x, int y);
 
 
-	const bool& IsOpen() const;
+	bool IsOpen() const;
 	void Update();
 	void Clear();
 	void Render(const sf::Drawable& drawable);

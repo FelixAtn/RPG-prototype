@@ -20,7 +20,7 @@ void StateMachine::Draw(Window& window)
 {
 	if(m_CurrentState != nullptr)
 	{
-		m_CurrentState->Draw(window);
+		m_CurrentState->Render(window);
 	}
 }
 

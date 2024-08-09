@@ -29,7 +29,7 @@ void GameSettings::Update(Cursor& cursor, Keyboard& keyboard, float deltaTime)
 	CheckChosenButton(cursor);
 }
 
-void GameSettings::Draw(Window& window)
+void GameSettings::Render(Window& window)
 {
 	window.Render(m_Sprite);
 	DrawButton();

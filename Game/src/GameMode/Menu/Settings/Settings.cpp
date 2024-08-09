@@ -31,7 +31,7 @@ void Settings::Update(Cursor& cursor, Keyboard& keyboard, float deltaTime)
 	CheckChosenButton(cursor);
 }
 
-void Settings::Draw(Window& window)
+void Settings::Render(Window& window)
 {
 	window.Render(m_Sprite);
 	DrawButton();

@@ -9,6 +9,6 @@ public:
 	void Create() override;
 	void Destroy() override;
 	void Update(Cursor& cursor, Keyboard& keyboard, float deltaTime) override;
-	void Draw(Window& window) override;
+	void Render(Window& window) override;
 	void CheckChosenButton(Cursor& cursor);
 };

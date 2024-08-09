@@ -16,7 +16,7 @@ class AnimationComponent
 {
 public:
 	AnimationComponent(sf::Sprite& target);
-	PlayAnimation MapDirection(const sf::Vector2f direction);
+	PlayAnimation MapDirection(const sf::Vector2f direction) const;
 	void MovementAnimation(const sf::Vector2f& movementDirection, float deltaTime);
 	void AttackAnimation(bool isAttacking, float deltaTime);
 

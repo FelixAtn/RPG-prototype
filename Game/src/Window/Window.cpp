@@ -78,7 +78,7 @@ void Window::Display()
 	m_Renderer.display();
 }
 
-const bool& Window::IsOpen() const
+bool Window::IsOpen() const
 {
 	return m_Renderer.isOpen();
 }

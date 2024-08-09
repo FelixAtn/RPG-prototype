@@ -14,13 +14,10 @@ void GameInstance::Run()
 {
 	while (m_Window.IsOpen())
 	{
-		/*m_Input.Update();*/
-
 		InputUpdate();
 		Update();
 		WindowPollEventUpdate();
 		Draw();
-		/*m_Input.Clear();*/
 
 		m_DeltaTime = m_Clock.restart().asSeconds();
 		m_Cursor.Clear();

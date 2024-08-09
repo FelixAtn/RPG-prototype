@@ -28,7 +28,7 @@ void Keybinds::Update(Cursor& cursor, Keyboard& keyboard, float deltaTime)
 	// To update the Keybind menu options, eg: Everytime a keybind is changed( W TO L ) -> Update both visually and functionally accordingly.
 }
 
-void Keybinds::Draw(Window& window)
+void Keybinds::Render(Window& window)
 {
 
 }

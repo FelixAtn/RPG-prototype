@@ -13,7 +13,7 @@ public:
 	virtual void Start() {};
 	virtual void Pause() {};
 	virtual void Update(Cursor& cursor, Keyboard& keyboard, float deltaTime) {};
-	virtual void Draw(Window& window) {};
+	virtual void Render(Window& window) {};
 };
 
 class StateMachine

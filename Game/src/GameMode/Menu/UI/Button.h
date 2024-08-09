@@ -8,15 +8,16 @@ public:
 	Button(const std::string& buttonText, float xPos, float yPos, float xScale, float yScale);
 	~Button();
 
-	void CreateButton(float xPos, float yPos, float xScale, float yScale);
-	void CreateText(const std::string buttonText, float xPos, float yPos);
 	void Update(sf::Sprite& cursor);
-	void Draw(Window& window);
-
+	void Render(Window& window);
+	void SetText(const std::string& text);
 	sf::Vector2f CalculatedCenterOrigin(sf::Vector2f size) const;
 	sf::Vector2f CalculateTextPosition(float xPos, float yPos) ;
 	const bool IsCursorOn() const { return isCursorOnButton; };
 
+private:
+	void CreateButton(float xPos, float yPos, float xScale, float yScale);
+	void CreateText(const std::string buttonText, float xPos, float yPos);
 private:
 	sf::Texture m_Texture;
 	sf::Sprite m_SpriteButton; 

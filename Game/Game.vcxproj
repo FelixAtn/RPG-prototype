@@ -159,6 +159,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CharacterBehaviour.cpp" />
+    <ClCompile Include="src\Entity\Character\CharacterComponents\MovementComponent.cpp" />
+    <ClCompile Include="src\Entity\Character\CharacterComponents\CombatComponent.cpp" />
+    <ClCompile Include="src\Entity\Character\CharacterComponents\HealthComponent.cpp" />
+    <ClCompile Include="src\Entity\Character\CharacterComponents\LevelingComponent.cpp" />
+    <ClCompile Include="src\Entity\Character\CharacterComponents\HitBoxComponent.cpp" />
     <ClCompile Include="src\GameMode\Menu\Settings\Keybinds.cpp" />
     <ClCompile Include="src\GameMode\Menu\Settings\AudioSettings.cpp" />
     <ClCompile Include="src\GameMode\Menu\Settings\Settings.cpp" />
@@ -172,13 +178,13 @@
     <ClCompile Include="src\Window\Camera.cpp" />
     <ClCompile Include="src\GameMode\Play\PlayGame.cpp" />
     <ClCompile Include="src\GameMode\Menu\MainMenu.cpp" />
-    <ClCompile Include="src\Entity\Npc\Pharmacist.cpp" />
-    <ClCompile Include="src\Entity\Npc\Blacksmith.cpp" />
-    <ClCompile Include="src\Entity\Npc\Npc.cpp" />
-    <ClCompile Include="src\Entity\Enemy\Enemy.cpp" />
-    <ClCompile Include="src\Entity\Character.cpp" />
-    <ClCompile Include="src\Entity\Player\Components\AnimationComponent.cpp" />
-    <ClCompile Include="src\Entity\Player\Player.cpp" />
+    <ClCompile Include="src\Entity\Character\Npc\Pharmacist.cpp" />
+    <ClCompile Include="src\Entity\Character\Npc\Blacksmith.cpp" />
+    <ClCompile Include="src\Entity\Character\Npc\Npc.cpp" />
+    <ClCompile Include="src\Entity\Character\Enemy\Enemy.cpp" />
+    <ClCompile Include="src\Entity\Character\Character.cpp" />
+    <ClCompile Include="src\Entity\Character\Player\Components\AnimationComponent.cpp" />
+    <ClCompile Include="src\Entity\Character\Player\Player.cpp" />
     <ClCompile Include="src\Entity\Entity.cpp" />
     <ClCompile Include="src\Input\Mask.cpp" />
     <ClCompile Include="src\Input\InputManager.cpp" />
@@ -191,10 +197,16 @@
     <ClCompile Include="src\Window\Window.cpp" />
     <ClCompile Include="src\Physics\VectorMath.cpp" />
     <ClCompile Include="src\Resources\TextureManager.cpp" />
-    <ClCompile Include="src\Entity\Npc\Taylor.cpp" />
+    <ClCompile Include="src\Entity\Character\Npc\Taylor.cpp" />
     <ClCompile Include="src\GameStates\StateMachine.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CharacterBehaviour.h" />
+    <ClInclude Include="src\Entity\Character\CharacterComponents\MovementComponent.h" />
+    <ClInclude Include="src\Entity\Character\CharacterComponents\CombatComponent.h" />
+    <ClInclude Include="src\Entity\Character\CharacterComponents\HealthComponent.h" />
+    <ClInclude Include="src\Entity\Character\CharacterComponents\LevelingComponent.h" />
+    <ClInclude Include="src\Entity\Character\CharacterComponents\HitBoxComponent.h" />
     <ClInclude Include="src\GameMode\Menu\Settings\Keybinds.h" />
     <ClInclude Include="src\GameMode\Menu\Settings\AudioSettings.h" />
     <ClInclude Include="src\GameMode\Menu\Settings\Settings.h" />
@@ -209,13 +221,13 @@
     <ClInclude Include="src\Window\Camera.h" />
     <ClInclude Include="src\GameMode\Play\PlayGame.h" />
     <ClInclude Include="src\GameMode\Menu\MainMenu.h" />
-    <ClInclude Include="src\Entity\Npc\Pharmacist.h" />
-    <ClInclude Include="src\Entity\Npc\Blacksmith.h" />
-    <ClInclude Include="src\Entity\Npc\Npc.h" />
-    <ClInclude Include="src\Entity\Enemy\Enemy.h" />
-    <ClInclude Include="src\Entity\Character.h" />
-    <ClInclude Include="src\Entity\Player\Components\AnimationComponent.h" />
-    <ClInclude Include="src\Entity\Player\Player.h" />
+    <ClInclude Include="src\Entity\Character\Npc\Pharmacist.h" />
+    <ClInclude Include="src\Entity\Character\Npc\Blacksmith.h" />
+    <ClInclude Include="src\Entity\Character\Npc\Npc.h" />
+    <ClInclude Include="src\Entity\Character\Enemy\Enemy.h" />
+    <ClInclude Include="src\Entity\Character\Character.h" />
+    <ClInclude Include="src\Entity\Character\Player\Components\AnimationComponent.h" />
+    <ClInclude Include="src\Entity\Character\Player\Player.h" />
     <ClInclude Include="src\Entity\Entity.h" />
     <ClInclude Include="src\Input\Mask.h" />
     <ClInclude Include="src\Input\InputManager.h" />
@@ -227,7 +239,7 @@
     <ClInclude Include="src\Window\Window.h" />
     <ClInclude Include="src\Physics\VectorMath.h" />
     <ClInclude Include="src\Resources\TextureManager.h" />
-    <ClInclude Include="src\Entity\Npc\Taylor.h" />
+    <ClInclude Include="src\Entity\Character\Npc\Taylor.h" />
     <ClInclude Include="src\GameStates\StateMachine.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

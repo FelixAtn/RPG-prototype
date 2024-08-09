@@ -9,7 +9,7 @@ AnimationComponent::AnimationComponent(sf::Sprite& target)
 	AddAnimations();
 }
 
-PlayAnimation AnimationComponent::MapDirection(const sf::Vector2f direction)
+PlayAnimation AnimationComponent::MapDirection(const sf::Vector2f direction) const
 {
 		if (direction.x == -1 && direction.y == 0)
 		{

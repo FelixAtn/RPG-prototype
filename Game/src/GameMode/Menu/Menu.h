@@ -40,7 +40,7 @@ public:
 	{
 		for (const auto& it : m_Button)
 		{
-			it.second->Draw(m_Window);
+			it.second->Render(m_Window);
 		}
 	}
 

@@ -22,7 +22,7 @@ void AudioSettings::Update(Cursor& cursor, Keyboard& keyboard, float deltaTime)
 
 }
 
-void AudioSettings::Draw(Window& window)
+void AudioSettings::Render(Window& window)
 {
 
 }
