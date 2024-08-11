@@ -12,7 +12,7 @@ public:
 	void SetDamageMultiplier(int level);
 
 	void SetAttackSpeed(float attackSpeed);
-	void Attack(Character& target);
+	void Attack(Character& target) const;
 
 private:
 	int m_Damage;

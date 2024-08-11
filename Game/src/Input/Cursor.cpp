@@ -21,15 +21,15 @@ void Cursor::InitCursor()
 void Cursor::UpdateCursor(Window& window)
 {
 	m_MousePositionOnScreen = sf::Mouse::getPosition();
-	m_MousePositionOnWindow = sf::Mouse::getPosition(window.GetWindow());
-	m_MousePositionView = window.GetWindow().mapPixelToCoords(sf::Mouse::getPosition(window.GetWindow()));
+	m_MousePositionOnWindow = sf::Mouse::getPosition(window);
+	m_MousePositionView = window.MapPixelToCoords(sf::Mouse::getPosition(window));
 	
 	m_CursorSprite.setPosition(sf::Vector2f(m_MousePositionView));
 }
 
 void Cursor::Draw(Window& window)
 {
-	window.Render(m_CursorSprite);
+	window.Draw(m_CursorSprite);
 }
 
 sf::Sprite& Cursor::GetSprite()

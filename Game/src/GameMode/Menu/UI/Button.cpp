@@ -60,8 +60,8 @@ void Button::Update(sf::Sprite& cursor)
 
 void Button::Render(Window& window)
 {
-	window.Render(m_SpriteButton);
-	window.Render(m_TextOnButton);
+	window.Draw(m_SpriteButton);
+	window.Draw(m_TextOnButton);
 }
 
 void Button::SetText(const std::string& text)

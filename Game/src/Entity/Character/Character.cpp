@@ -1,10 +1,10 @@
 #include "Character.h"
-
+#include "Physics/Math.h"
 
 Character::Character()
+	: m_Collider(m_Sprite, 0.2f)
 {
 	m_Cooldown = 0.f;
-	m_HitBoxRadius = 0;
 }
 
 Character::~Character()
@@ -17,13 +17,12 @@ void Character::SetName(const std::string& name)
 
 void Character::Render(Window& window)
 {
-	window.Render(m_Sprite);
-	m_HitBoxComponent.Render(window);
+	window.Draw(m_Sprite);
 }
 
 void Character::SecondUpdate()
 {
-	m_HitBoxComponent.Update(GetSpritePosition());
+
 }
 
 void Character::SetCooldown(float coolDown)
@@ -31,24 +30,9 @@ void Character::SetCooldown(float coolDown)
 	m_Cooldown = coolDown;
 }
 
-void Character::SetHitBox(float hitBoxRadius)
-{
-	if (GetHitBoxComponent().IsHitBoxDisplayed())
-	{
-		m_HitBoxRadius = hitBoxRadius;
-		m_HitBoxComponent.Init(m_HitBoxRadius);
-	}
-}
-
-
 std::string Character::GetName() const
 {
 	return m_Name;
-}
-
-HitBoxComponent& Character::GetHitBoxComponent()
-{
-	return m_HitBoxComponent;
 }
 
 HealthComponent& Character::GetHealthComponent()
@@ -71,13 +55,15 @@ LevelingComponent& Character::GetLevelComponent()
 	return m_LevelComponent;
 }
 
+
+BoxCollider& Character::GetCollider()
+{
+	return m_Collider;
+}
+
 float Character::GetCooldown() const
 {
 	return m_Cooldown;
 }
 
-float Character::GetHitBoxRadius() const
-{
-	return m_HitBoxRadius;
-}
 

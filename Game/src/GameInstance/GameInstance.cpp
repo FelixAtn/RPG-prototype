@@ -37,7 +37,6 @@ void GameInstance::Init()
 	unsigned int SettingsID = m_StateMachine.AddState(gameSettings);
 	unsigned int DisplaySettingsID = m_StateMachine.AddState(DisplaySetting);
 
-	
 	//Menu->SetState(SettingsID);
 	m_StateMachine.SwitchState(MenuID);
 }
@@ -45,7 +44,6 @@ void GameInstance::Init()
 
 void GameInstance::InputUpdate()
 {
-	m_KeyboardComponent.Update();
 	m_Cursor.Update();
 	m_Cursor.UpdateCursor(m_Window);
 }

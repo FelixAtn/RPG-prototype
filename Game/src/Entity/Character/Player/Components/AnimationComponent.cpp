@@ -1,5 +1,5 @@
  #include "AnimationComponent.h"
- #include "Physics/VectorMath.h"
+ #include "Physics/Math.h"
 
 AnimationComponent::AnimationComponent(sf::Sprite& target) 
 	: m_Sprite(target)

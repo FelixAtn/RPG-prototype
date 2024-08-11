@@ -4,7 +4,20 @@
 #include "Entity/Character/Enemy/Enemy.h"
 #include "Tilemap/MapLayer.h"
 
+namespace GameData
+{
+	const std::string PLAYER_NAME = "YUUMI";
+	const std::string PLAYER_TYPE = "reaper";
+}
 
+struct DrawableEntity
+{
+	sf::Sprite m_Entity;
+	sf::Vector2f m_Position;
+
+	DrawableEntity(const sf::Sprite& entitySprite, const sf::Vector2f& entityPosition)
+		: m_Entity(entitySprite), m_Position(entityPosition) {}
+};
 class PlayGame : public States
 {
 public:
@@ -13,16 +26,14 @@ public:
 	void Create() override;
 	void Destroy() override;
 	void Start() override;
-	void Pause() override;
+	void Pause() override {};
 
-	void AddMap();
+	void CheckCollision();
+
 	void AddEnemy(const std::string& enemyName, const std::string& enemyType, const float& xPos, const float& yPos);
 	void AddPlayer(const std::string& playerName, const std::string& playerType);
-
-	void CheckCollision(Cursor& cursor, Keyboard& keyboard);
 	void Update(Cursor& cursor, Keyboard& keyboard, float deltaTime) override;
-	void UpdatePlayer(Cursor& cursor, Keyboard& keyboard, float deltaTime);
-	void UpdateEnemies(Cursor& cursor, Keyboard& keyboard, float deltaTime);
+
 
 	void Render(Window& window) override;
 	void DrawTiles(Window& window);

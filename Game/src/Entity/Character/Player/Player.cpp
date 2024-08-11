@@ -5,8 +5,6 @@
 Player::Player(const std::string& playerName, const std::string& playerType)
 	: m_Animation(GetSprite())
 {
-	GetHitBoxComponent().ShouldHitBoxRender(true);
-	SetHitBox(10);
 	InitSprite(playerType);
 	InitAttributes(playerName);
 }
@@ -77,5 +75,4 @@ void Player::Animations(Keyboard& input, float deltaTime)
 	m_Animation.MovementAnimation(direction, deltaTime);
 	m_Animation.AttackAnimation(isAttacking, deltaTime);
 }
-
 

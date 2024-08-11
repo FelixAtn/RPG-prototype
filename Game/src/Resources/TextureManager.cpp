@@ -23,14 +23,13 @@ TextureManager& TextureManager::getInstance()
 void TextureManager::LoadTexture(const std::string& name, const std::string& filePath)
 {
 	sf::Texture texture;
-	if (texture.loadFromFile(filePath))
-	{
-		m_Textures[name] = texture;
-	}
-	else
+	if (!texture.loadFromFile(filePath))
 	{
 		std::cerr << "Failed to load texture: " << filePath << std::endl;
+		return;
 	}
+
+	m_Textures[name] = texture;
 }
 
 const sf::Texture& TextureManager::GetTexture(const std::string& name)

@@ -30,7 +30,7 @@ void MainMenu::Update(Cursor& cursor, Keyboard& keyboard, float deltaTime)
 }
 void MainMenu::Render(Window& window)
 {
-	window.Render(m_Sprite);
+	window.Draw(m_Sprite);
 	DrawButton();
 }
 void MainMenu::CheckChosenButton(Cursor& cursor)
@@ -50,7 +50,7 @@ void MainMenu::CheckChosenButton(Cursor& cursor)
 				break;
 
 			case MenuOpt::Exit:	
-				m_Window.GetWindow().close();
+				m_Window.Close();
 				break;
 			}
 		}

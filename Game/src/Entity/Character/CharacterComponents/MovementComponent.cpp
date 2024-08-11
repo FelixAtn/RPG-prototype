@@ -1,5 +1,5 @@
 #include "MovementComponent.h"
-#include "Physics/VectorMath.h"
+#include "Physics/Math.h"
 
 
 MovementComponent::MovementComponent()
@@ -42,12 +42,9 @@ void MovementComponent::SetVelocity(sf::Vector2f velocity)
 
 void MovementComponent::Move(sf::Sprite& character, float deltaTime)
 {
-	VectorMath::Math::GetNormalizedVector(m_MovementDirection);
-	sf::Vector2f direction = GetMovementDirection();
 	sf::Vector2f position = GetCharacterPosition(character);
 	sf::Vector2f newPosition = GetNewPosition(position, deltaTime);
 	character.setPosition(newPosition);
-	m_Velocity = { 0.f, 0.f };
 }
 
 sf::Vector2f MovementComponent::GetCharacterPosition(sf::Sprite& character) const
@@ -55,9 +52,10 @@ sf::Vector2f MovementComponent::GetCharacterPosition(sf::Sprite& character) cons
 	return character.getPosition();
 }
 
-sf::Vector2f MovementComponent::GetNewPosition(sf::Vector2f oldCharacterPosition, float deltaTime) const
+sf::Vector2f MovementComponent::GetNewPosition(sf::Vector2f oldPosition, float deltaTime) const
 {
-	oldCharacterPosition += m_MovementDirection * m_MovementSpeed * deltaTime;
-	return oldCharacterPosition + m_Velocity;
+	sf::Vector2f normalizedDirection = Math::GetNormalizedVector(m_MovementDirection);
+	sf::Vector2f newPosition = oldPosition + (normalizedDirection * m_MovementSpeed * deltaTime) + m_Velocity;
+	return newPosition;
 }
 

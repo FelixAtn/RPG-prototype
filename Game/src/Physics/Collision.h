@@ -1,34 +1,18 @@
 #pragma once
 #include "SFML/Graphics.hpp"
 
-namespace Collision
+
+struct Collision
 {
-	// AABB COLLISION 
-	class Rectangles
+	enum Type
 	{
-	public:
-		void Reset();
-		bool IsColliding(const sf::Sprite& player, const sf::Sprite& target);
-		sf::Vector2f GetVelocity();
-
-	private:
-		sf::Vector2f m_Distance;
-		sf::Vector2f m_Velocity{ 0.f,0.f };
-		sf::Vector2f m_Overlap;
+		Circle,
+		Square
 	};
 
-	// CIRCLE COLLISION
-	class Circles
-	{
-	public:
-		void Reset();
-		bool IsColliding(const sf::Sprite& player, const sf::Sprite& target);
-		const float GetRadius(sf::FloatRect player, sf::FloatRect target) const;
-		sf::Vector2f GetVelocity();
+	static bool IsColliding(const sf::FloatRect& player, const sf::FloatRect& target, sf::Vector2f& outVelocity, Type type = Type::Circle);
 
-	private:
-		sf::Vector2f m_Distance;
-		sf::Vector2f m_Velocity{ 0.f,0.f };
-		sf::Vector2f m_Overlap;
-	};
+private:
+	static bool IsColliding_Circle(const sf::FloatRect& player, const sf::FloatRect& target, sf::Vector2f& outVelocity);
 };
+

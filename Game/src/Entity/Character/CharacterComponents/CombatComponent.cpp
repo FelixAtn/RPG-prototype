@@ -16,10 +16,10 @@ void CombatComponent::SetAttackSpeed(float attackSpeed)
 	m_Attackspeed = attackSpeed;
 }
 
-void CombatComponent::Attack(Character& target)
+void CombatComponent::Attack(Character& target) const 
 {
 	// TODO: CHARACTERS WILL EVENTUALLY HAVE DEFENSE, THEREFORE,  damage - defense.
-	int damage = m_Damage * m_DamageMultiplier;
+	float damage = m_Damage * m_DamageMultiplier;
 	std::cout << "\n\n MY LEVEL IS: " <<  " " << " AND MY DAMAGE IS: " << damage;
 	target.GetHealthComponent().DecreaseHealth(damage);
 }

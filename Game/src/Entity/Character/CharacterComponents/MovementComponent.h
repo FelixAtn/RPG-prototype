@@ -19,7 +19,7 @@ public:
 
 private:
 	sf::Vector2f GetCharacterPosition(sf::Sprite& character) const;
-	sf::Vector2f GetNewPosition(sf::Vector2f oldCharacterPosition, float deltaTime) const;
+	sf::Vector2f GetNewPosition(sf::Vector2f normalizedDirection, float deltaTime) const;
 
 private:
 	sf::Vector2f m_MovementDirection;

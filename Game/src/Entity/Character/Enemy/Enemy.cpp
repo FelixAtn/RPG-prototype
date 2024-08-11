@@ -5,8 +5,6 @@
 Enemy::Enemy(const std::string& enemyName, const std::string& type, float xPos, float yPos)
 {
 	std::cout << "Init: " << enemyName << "\n";
-	GetHitBoxComponent().ShouldHitBoxRender(true);
-	SetHitBox(20);
 	SetName(enemyName);
 	SetTexture(type);
 	SetRect(0, 0, 64, 64);

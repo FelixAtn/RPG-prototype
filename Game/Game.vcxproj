@@ -159,12 +159,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Physics\BoxCollider.cpp" />
     <ClCompile Include="CharacterBehaviour.cpp" />
     <ClCompile Include="src\Entity\Character\CharacterComponents\MovementComponent.cpp" />
     <ClCompile Include="src\Entity\Character\CharacterComponents\CombatComponent.cpp" />
     <ClCompile Include="src\Entity\Character\CharacterComponents\HealthComponent.cpp" />
     <ClCompile Include="src\Entity\Character\CharacterComponents\LevelingComponent.cpp" />
-    <ClCompile Include="src\Entity\Character\CharacterComponents\HitBoxComponent.cpp" />
     <ClCompile Include="src\GameMode\Menu\Settings\Keybinds.cpp" />
     <ClCompile Include="src\GameMode\Menu\Settings\AudioSettings.cpp" />
     <ClCompile Include="src\GameMode\Menu\Settings\Settings.cpp" />
@@ -175,6 +175,7 @@
     <ClCompile Include="src\Input\Keyboard.cpp" />
     <ClCompile Include="src\Input\Mouse.cpp" />
     <ClCompile Include="src\Entity\Animation\AnimationManager.cpp" />
+    <ClCompile Include="src\Physics\Math.cpp" />
     <ClCompile Include="src\Window\Camera.cpp" />
     <ClCompile Include="src\GameMode\Play\PlayGame.cpp" />
     <ClCompile Include="src\GameMode\Menu\MainMenu.cpp" />
@@ -195,18 +196,17 @@
     <ClCompile Include="src\GameInstance\GameInstance.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Window\Window.cpp" />
-    <ClCompile Include="src\Physics\VectorMath.cpp" />
     <ClCompile Include="src\Resources\TextureManager.cpp" />
     <ClCompile Include="src\Entity\Character\Npc\Taylor.cpp" />
     <ClCompile Include="src\GameStates\StateMachine.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Physics\BoxCollider.h" />
     <ClInclude Include="CharacterBehaviour.h" />
     <ClInclude Include="src\Entity\Character\CharacterComponents\MovementComponent.h" />
     <ClInclude Include="src\Entity\Character\CharacterComponents\CombatComponent.h" />
     <ClInclude Include="src\Entity\Character\CharacterComponents\HealthComponent.h" />
     <ClInclude Include="src\Entity\Character\CharacterComponents\LevelingComponent.h" />
-    <ClInclude Include="src\Entity\Character\CharacterComponents\HitBoxComponent.h" />
     <ClInclude Include="src\GameMode\Menu\Settings\Keybinds.h" />
     <ClInclude Include="src\GameMode\Menu\Settings\AudioSettings.h" />
     <ClInclude Include="src\GameMode\Menu\Settings\Settings.h" />
@@ -218,6 +218,7 @@
     <ClInclude Include="src\Input\Keyboard.h" />
     <ClInclude Include="src\Input\Mouse.h" />
     <ClInclude Include="src\Entity\Animation\AnimationManager.h" />
+    <ClInclude Include="src\Physics\Math.h" />
     <ClInclude Include="src\Window\Camera.h" />
     <ClInclude Include="src\GameMode\Play\PlayGame.h" />
     <ClInclude Include="src\GameMode\Menu\MainMenu.h" />

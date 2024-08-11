@@ -31,7 +31,7 @@ void GameSettings::Update(Cursor& cursor, Keyboard& keyboard, float deltaTime)
 
 void GameSettings::Render(Window& window)
 {
-	window.Render(m_Sprite);
+	window.Draw(m_Sprite);
 	DrawButton();
 }
 
