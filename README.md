@@ -1,4 +1,4 @@
-My 2D RPG GAME PROTOTYPE 
+2D Game prototype project
 
 Welcome to my project! This project was built using SFML and Visual Studio 2022, and it’s ready to compile and run. 
 Follow the instructions below to set up the project and start the game.
