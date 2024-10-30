@@ -1,0 +1,388 @@
+PLAYER:
+    ATTRIBUTES:
+       name: PLAYER
+       damage: 20    
+       health: 100 
+       movementSpeed: 200
+       level: 5
+       experience: 0
+       luck: 0
+
+    ANIMATIONS:
+     - animationID: 1 #IDLE_UP
+       interval: 0.02 
+       row: 0
+       xFrames: 50
+       width: 64
+       height: 64
+       playOnce: false
+       isAction: false
+       priority: 0
+     
+     - animationID: 2 #IDLE_DOWN_LEFT,
+       interval: 0.02
+       row: 1
+       xFrames: 50
+       width: 64
+       height: 64
+       playOnce: false
+       isAction: false
+       priority: 0
+
+     - animationID: 3 #IDLE_DOWN_RIGHT 
+       interval: 0.02
+       row: 2
+       xFrames: 50
+       width: 64
+       height: 64
+       playOnce: false       
+       isAction: false
+       priority: 0
+
+     - animationID: 4 #WALK_UP
+       interval: 0.02
+       row: 3
+       xFrames: 19
+       width: 64
+       height: 64
+       playOnce: false              
+       isAction: false
+       priority: 0
+
+     - animationID: 5 #WALK_DOWN
+       interval: 0.02 
+       row: 4
+       xFrames: 19
+       width: 64
+       height: 64
+       playOnce: true
+       isAction: false
+       priority: 0
+
+     - animationID: 6 #WALK_LEFT
+       interval: 0.02
+       row: 5
+       xFrames: 19
+       width: 64
+       height: 64
+       playOnce: false
+       isAction: false
+       priority: 0
+
+     - animationID: 7 #WALK_RIGHT
+       interval: 0.02
+       row: 6
+       xFrames: 19
+       width: 64
+       height: 64
+       playOnce: false       
+       isAction: false
+       priority: 0
+
+     - animationID: 8 #BUFF_CAST
+       interval: 0.02
+       row: 7
+       xFrames: 33
+       width: 64
+       height: 64
+       playOnce: true        
+       isAction: true
+       priority: 2
+
+     - animationID: 9 #SPELL_ATTACK_LEFT
+       interval: 0.02
+       row: 8
+       xFrames: 31
+       width: 64
+       height: 64
+       playOnce: true
+       isAction: true
+       priority: 1
+
+     - animationID: 10 #SPELL_ATTACK_RIGHT
+       interval: 0.02
+       row: 9
+       xFrames: 31
+       width: 64
+       height: 64
+       playOnce: true  
+       isAction: true
+       priority: 1
+
+     - animationID: 11 #DEAD
+       interval: 0.02
+       row: 10
+       xFrames: 46
+       width: 64
+       height: 64
+       playOnce: false  
+       isAction: false
+       priority: 0
+
+    LOCATION:
+       X: 600
+       Y: 300
+       
+    TEXTURE:
+       width: 128
+       height: 128
+
+
+ENEMY1:
+    ATTRIBUTES:
+       name: 
+       damage: 20    
+       health: 100 
+       movementSpeed: 200
+       level: 5
+       experience: 0
+       luck: 0
+
+    ANIMATIONS:
+     - animationID: 1 #IDLE_UP
+       interval: 0.02 
+       row: 0
+       xFrames: 50
+       width: 64
+       height: 64
+       playOnce: false
+       isAction: false
+       priority: 0
+     
+     - animationID: 2 #IDLE_DOWN_LEFT,
+       interval: 0.02
+       row: 1
+       xFrames: 50
+       width: 64
+       height: 64
+       playOnce: false
+       isAction: false
+       priority: 0
+
+     - animationID: 3 #IDLE_DOWN_RIGHT 
+       interval: 0.02
+       row: 2
+       xFrames: 50
+       width: 64
+       height: 64
+       playOnce: false       
+       isAction: false
+       priority: 0
+
+     - animationID: 4 #WALK_UP
+       interval: 0.02
+       row: 3
+       xFrames: 19
+       width: 64
+       height: 64
+       playOnce: false              
+       isAction: false
+       priority: 0
+
+     - animationID: 5 #WALK_DOWN
+       interval: 0.02 
+       row: 4
+       xFrames: 19
+       width: 64
+       height: 64
+       playOnce: true
+       isAction: false
+       priority: 0
+
+     - animationID: 6 #WALK_LEFT
+       interval: 0.02
+       row: 5
+       xFrames: 19
+       width: 64
+       height: 64
+       playOnce: false
+       isAction: false
+       priority: 0
+
+     - animationID: 7 #WALK_RIGHT
+       interval: 0.02
+       row: 6
+       xFrames: 19
+       width: 64
+       height: 64
+       playOnce: false       
+       isAction: false
+       priority: 0
+
+     - animationID: 8 #BUFF_CAST
+       interval: 0.02
+       row: 7
+       xFrames: 33
+       width: 64
+       height: 64
+       playOnce: true        
+       isAction: true
+       priority: 2
+
+     - animationID: 9 #SPELL_ATTACK_LEFT
+       interval: 0.02
+       row: 8
+       xFrames: 31
+       width: 64
+       height: 64
+       playOnce: true
+       isAction: true
+       priority: 1
+
+     - animationID: 10 #SPELL_ATTACK_RIGHT
+       interval: 0.02
+       row: 9
+       xFrames: 31
+       width: 64
+       height: 64
+       playOnce: true  
+       isAction: true
+       priority: 1
+
+     - animationID: 11 #DEAD
+       interval: 0.02
+       row: 10
+       xFrames: 46
+       width: 64
+       height: 64
+       playOnce: false  
+       isAction: false
+       priority: 0
+
+    LOCATION:
+       X: 600
+       Y: 300
+       
+    TEXTURE:
+       width: 128
+       height: 128
+
+
+ENEMY2:
+    ATTRIBUTES:
+       name: 
+       damage: 20    
+       health: 100 
+       movementSpeed: 200
+       level: 5
+       experience: 0
+       luck: 0
+
+    ANIMATIONS:
+     - animationID: 1 #IDLE_UP
+       interval: 0.02 
+       row: 0
+       xFrames: 50
+       width: 64
+       height: 64
+       playOnce: false
+       isAction: false
+       priority: 0
+     
+     - animationID: 2 #IDLE_DOWN_LEFT,
+       interval: 0.02
+       row: 1
+       xFrames: 50
+       width: 64
+       height: 64
+       playOnce: false
+       isAction: false
+       priority: 0
+
+     - animationID: 3 #IDLE_DOWN_RIGHT 
+       interval: 0.02
+       row: 2
+       xFrames: 50
+       width: 64
+       height: 64
+       playOnce: false       
+       isAction: false
+       priority: 0
+
+     - animationID: 4 #WALK_UP
+       interval: 0.02
+       row: 3
+       xFrames: 19
+       width: 64
+       height: 64
+       playOnce: false              
+       isAction: false
+       priority: 0
+
+     - animationID: 5 #WALK_DOWN
+       interval: 0.02 
+       row: 4
+       xFrames: 19
+       width: 64
+       height: 64
+       playOnce: true
+       isAction: false
+       priority: 0
+
+     - animationID: 6 #WALK_LEFT
+       interval: 0.02
+       row: 5
+       xFrames: 19
+       width: 64
+       height: 64
+       playOnce: false
+       isAction: false
+       priority: 0
+
+     - animationID: 7 #WALK_RIGHT
+       interval: 0.02
+       row: 6
+       xFrames: 19
+       width: 64
+       height: 64
+       playOnce: false       
+       isAction: false
+       priority: 0
+
+     - animationID: 8 #BUFF_CAST
+       interval: 0.02
+       row: 7
+       xFrames: 33
+       width: 64
+       height: 64
+       playOnce: true        
+       isAction: true
+       priority: 2
+
+     - animationID: 9 #SPELL_ATTACK_LEFT
+       interval: 0.02
+       row: 8
+       xFrames: 31
+       width: 64
+       height: 64
+       playOnce: true
+       isAction: true
+       priority: 1
+
+     - animationID: 10 #SPELL_ATTACK_RIGHT
+       interval: 0.02
+       row: 9
+       xFrames: 31
+       width: 64
+       height: 64
+       playOnce: true  
+       isAction: true
+       priority: 1
+
+     - animationID: 11 #DEAD
+       interval: 0.02
+       row: 10
+       xFrames: 46
+       width: 64
+       height: 64
+       playOnce: false  
+       isAction: false
+       priority: 0
+
+    LOCATION:
+       X: 600
+       Y: 300
+       
+    TEXTURE:
+       width: 128
+       height: 128

@@ -1,0 +1,21 @@
+[
+  {
+    "ID": 0,
+    "Button_File": "game-files/assets/Menu/MenuButton.png",
+    "Position": {
+      "X": 100,
+      "Y": 200
+    },
+    "Text": "Play"
+  },
+
+  {
+    "ID": 1,
+    "Button_File": "game-files/assets/Menu/MenuButton.png",
+    "Position": {
+      "X": 100,
+      "Y": 400
+    },
+    "Text": "Exit"
+  }
+]

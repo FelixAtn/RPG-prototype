@@ -1,0 +1,19 @@
+#pragma once
+#include "stdafx.h"
+
+enum class AnimationID
+{
+	NONE,
+	IDLE_UP,
+	IDLE_DOWN_LEFT,
+	IDLE_DOWN_RIGHT,
+	WALK_UP,
+	WALK_DOWN,
+	WALK_LEFT,
+	WALK_RIGHT,
+	BUFF_CAST,
+	SPELL_ATTACK_LEFT,
+	SPELL_ATTACK_RIGHT,
+	DEAD,
+	LEVEL_UP
+};

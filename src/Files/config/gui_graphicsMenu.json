@@ -1,0 +1,74 @@
+[
+  {
+    "ID": 0,
+    "Button_File": "assets/Menu/MenuButton.png",
+    "Position": {
+      "X": 100,
+      "Y": 100
+    },
+    "Text": "Resolution"
+  },
+  {
+    "ID": 1,
+    "Button_File": "assets/Menu/MenuButton.png",
+    "Position": {
+      "X": 100,
+      "Y": 200
+    },
+    "Text": "FullScreen"
+  },
+  {
+    "ID": 2,
+    "Button_File": "assets/Menu/MenuButton.png",
+    "Position": {
+      "X": 100,
+      "Y": 300
+    },
+    "Text": "VSync"
+  },
+  {
+    "ID": 3,
+    "Button_File": "assets/Menu/MenuButton.png",
+    "Position": {
+      "X": 100,
+      "Y": 800
+    },
+    "Text": "Back"
+  },
+    {
+    "ID": 4,
+    "Button_File": "assets/Menu/button2.png",
+    "Position": {
+      "X": 300,
+      "Y": 100
+    },
+    "Text": "1920x1080"
+  },
+  {
+    "ID": 5,
+    "Button_File": "assets/Menu/button2.png",
+    "Position": {
+      "X": 500,
+      "Y": 100
+    },
+    "Text": "2440x1440"
+  },
+  {
+    "ID": 6,
+    "Button_File": "assets/Menu/button2.png",
+    "Position": {
+      "X": 700,
+      "Y": 100
+    },
+    "Text": "3440x1440"
+  },
+  {
+    "ID": 7,
+    "Button_File": "assets/Menu/button2.png",
+    "Position": {
+      "X": 900,
+      "Y": 100
+    },
+    "Text": "1280x1080"
+  }
+]

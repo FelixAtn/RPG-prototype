@@ -1,0 +1,10 @@
+{
+    "GameTitle": "Yuumi",
+    "HAD INIT BEFORE?": true,
+    "MaxFPS": 240,
+    "Resolution": {
+        "width": 1920,
+        "height": 1080
+    },
+    "VSync": true
+}
