@@ -4,7 +4,7 @@ Welcome to my 2D game prototype project! Built using **SFML** and **Visual Studi
 
 ## Presentation Video
 
-[Watch the presentation video here](LINK-TO-ADD)
+[Watch the game presentation video and development journey here](LINK-TO-ADD)
 
 ## Requirements
 
