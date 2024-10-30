@@ -1,0 +1,51 @@
+void Update(Object& object, int xFrames, int row, float deltaTime);
+
+Slash1
+{ 
+   UP:
+   xFrame = 5;
+   row = 0;
+
+   DOWN:
+   xFrame = 5;
+   row = 2;
+
+   LEFT: 
+   xFrame = 5;
+   row = 1;
+
+   RIGHT:
+   xFrame = 5;
+   row = 3;
+}
+
+
+
+
+Dead
+{ 
+   DOWN:
+   xFrame = 5;
+   row = 4;
+}
+
+
+
+IDLE
+{ 
+   UP:
+   xFrame = 2;
+   row = 6;
+
+   DOWN:
+   xFrame = 2;
+   row = 8;
+
+   LEFT: 
+   xFrame = 2;
+   row = 7;
+
+   RIGHT:
+   xFrame = 2;
+   row = 9;
+}
