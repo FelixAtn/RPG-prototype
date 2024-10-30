@@ -4,15 +4,9 @@
 *.o
 *.obj
 
-# Precompiled Headers
-*.gch
-*.pch
-
 # Compiled Dynamic libraries
 *.so
 *.dylib
-*.dll
-*.dll
 
 # Fortran module files
 *.mod
@@ -23,8 +17,6 @@
 *.la
 *.a
 #*.lib
-
-
 
 # Executables
 *.exe
