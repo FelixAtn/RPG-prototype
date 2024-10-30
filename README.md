@@ -2,6 +2,10 @@
 
 Welcome to my 2D game prototype project! Built using **SFML** and **Visual Studio 2022**, this prototype is ready to compile and run. Follow the instructions below to set up the project and start the game.
 
+## Presentation Video
+
+[Watch the presentation video here](LINK-TO-ADD)
+
 ## Requirements
 
 - **Visual Studio 2022** (or compatible C++ compiler)
