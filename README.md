@@ -57,7 +57,36 @@ my_project/
 └── my_project.sln      # Visual Studio solution file
 ```
 
-## Credits
-- **SFML** - for graphics, audio, and system handling.
-- **YAML-CPP** - for parsing configuration files.
-- **ASSETS** - TO BE INCLUDED
+## Development Process & Learning Resources
+
+1. **Books**
+   - **Game Programming Patterns by Robert Nystrom:** Guidance on applying design patterns to create clean, scalable game code. [Book link](https://gameprogrammingpatterns.com/)
+   - **C++ Primer by Stanley B. Lippman, Josée Lajoie, Barbara E. Moo:** A comprehensive introduction to C++ programming. [Book link](https://www.amazon.co.uk/C-Primer-Stanley-B-Lippman/dp/0321714113)
+
+2. **Online Books/Resources**
+   - **LearnCPP by Alex, Nascardriver, Cosmin James, and the community:** A great starting point for learning C++. [Online](https://www.learncpp.com/)
+   - **CppReference:** A valuable reference for C++ programming. [Online](https://en.cppreference.com/w/)
+   - **SFML Documentation:** Essential for handling windowing, graphics, input, and sound. [SFML Docs](https://www.sfml-dev.org/tutorials/2.6/)
+   - **YAML-CPP Wiki:** Useful for parsing configuration files. [YAML-CPP Wiki](https://github.com/jbeder/yaml-cpp/wiki)
+
+3. **Videos**
+   - **The Cherno:** C++ game development tutorials on YouTube. [YouTube](https://www.youtube.com/@TheCherno)
+   - **Abdul Bari:** Comprehensive C++ deep dive course on Udemy. [Udemy](https://www.udemy.com/course/cpp-deep-dive/?srsltid=AfmBOoox6aMVUNeUxx0F51jV-FCFi4pd5Y8KF5bRwrRhrSK6-alkIRoe&couponCode=LEARNNOWPLANS)
+   - **3Blue1Brown:** "Essence of Linear Algebra" series on YouTube. [YouTube](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab)
+   - **Will Hess:** The ultimate guide for physics in game development. [YouTube](https://www.youtube.com/watch?v=3lBYVSplAuo&ab_channel=WillHess)
+   - **Javidx9:** Essential mathematics for aspiring game developers. [YouTube](https://www.youtube.com/watch?v=DPfxjQ6sqrc&t=1995s&ab_channel=javidx9)
+
+## Author
+
+This project is developed and maintained by **Felix Atanasescu**, a passionate aspiring junior game developer with a focus on C++ and real-time game development.
+
+- **LinkedIn**: [Felix Atanasescu](https://linkedin.com/in/felix-atanasescu)
+- **GitHub**: [FelixAtn](https://github.com/FelixAtn)
+- **Email**: [felix.att@protonmail.com](mailto:felix.att@protonmail.com)
+
+## Credits & Acknowledgements
+
+- **SFML**: For providing a simple and efficient multimedia library.
+- **YAML-CPP**: For making configuration management easy and readable.
+- **Game Programming Patterns by Robert Nystrom**: For providing inspiration and guidance on game architecture.
+- **Assets**: Assets will be included in the final version of the project.
