@@ -4,12 +4,12 @@ constexpr float DIVISOR = 0.5f;
 class Camera
 {
 public:
-	Camera(Window& window, const Vector2f& initialSize);
+	Camera(Window& window, const Vector2f& initialSize = Vector2f(400, 600));
 
 	void Follow(const Vector2f targetToFollow) { m_View.setCenter(targetToFollow); }
 	void Zoom(float zoomValue) { m_View.zoom(zoomValue); }
 	void Move(const Vector2f offest) { m_View.move(offest); }
-	void Apply() { m_Window.SetView(m_View); }
+	void Apply() { m_Window.SetCurrentView(m_View); }
 	void Reset();
 
 private:

@@ -17,7 +17,7 @@ public:
 
 		for (int i = 0; i < count; ++i)
 		{
-			// Generate random positions within an area
+			// Generate random positions within area
 			float posX = randomGen.GetRandomFloat(topLeft.x, topLeft.x + areaSize.x);
 			float posY = randomGen.GetRandomFloat(topLeft.y, topLeft.y + areaSize.y);
 

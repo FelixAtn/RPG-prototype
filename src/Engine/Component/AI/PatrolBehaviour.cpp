@@ -12,7 +12,7 @@ PatrolBehaviour::PatrolBehaviour(Object& object, float radius /*= 100.0f*/, floa
 {
 	if (m_Data == nullptr)
 	{
-		Debug::Print("AI PATROL - failed INIT: Missing components (nullptr)", LogLevel::ERROR_);
+		Log::Print("AI PATROL - failed INIT: Missing components (nullptr)", LogLevel::ERROR_);
 		throw std::runtime_error("AI PATROL - Missing Components");
 	}
 

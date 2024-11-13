@@ -8,7 +8,7 @@ C_Animation::C_Animation(Object& object)
 {
 	if (m_SpriteComponent == nullptr || m_Movement == nullptr || m_Data == nullptr)
 	{
-		Debug::Print("Animation - failed INIT: Missing components (nullptr)", LogLevel::ERROR_);
+		Log::Print("Animation - failed INIT: Missing components (nullptr)", LogLevel::ERROR_);
 		throw std::runtime_error("Animation - Missing Components");
 	}
 	LoadAnimations(m_Data->GetName());
@@ -22,7 +22,7 @@ void C_Animation::LoadAnimations(const std::string& objectName)
 
 	if (!config[objectName] || !config[objectName]["ANIMATIONS"])
 	{
-		Debug::Print("NODE IN FILE NOT FOUND", objectName, LogLevel::WARNING);
+		Log::Print("NODE IN FILE NOT FOUND", objectName, LogLevel::WARNING);
 		return;
 	}
 

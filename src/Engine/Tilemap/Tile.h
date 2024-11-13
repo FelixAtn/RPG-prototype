@@ -1,6 +1,6 @@
 #pragma once
-#include "Engine/Object/Object.h"  // Add the proper include path for Object
-#include "Engine/Enums/TileTypeID.h"  // Add the proper include path for TileTypeID
+#include "Engine/Object/Object.h" 
+#include "Engine/Enums/TileTypeID.h" 
 
 
 class Tile : public Object

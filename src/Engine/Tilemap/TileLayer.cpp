@@ -48,13 +48,13 @@ bool TileLayer::IsLoaded(const std::string& texture, const std::string& mapName)
 
 	if (spriteTexture == nullptr) 
 	{
-		Debug::Print("texture is NULL", LogLevel::ERROR_);
+		Log::Print("texture is NULL", LogLevel::ERROR_);
 		return false;
 	}
 
 	if (!IsMapNameValid(mapData, mapName)) 
 	{
-		Debug::Print("Invalid map name | node", LogLevel::ERROR_);
+		Log::Print("Invalid map name | node", LogLevel::ERROR_);
 		return false;
 	}
 
@@ -72,7 +72,7 @@ bool TileLayer::IsLoaded(const std::string& texture, const std::string& mapName)
 		{
 			if (ID > maxTileID)
 			{
-				Debug::Print("Wrong TileID, bigger than the existing tile number in the tilesheet. \nThe max ID in this tilesheet is:", maxTileID, LogLevel::ERROR_);
+				Log::Print("Wrong TileID, bigger than the existing tile number in the tilesheet. \nThe max ID in this tilesheet is:", maxTileID, LogLevel::ERROR_);
 				continue;
 			}
 
@@ -83,7 +83,7 @@ bool TileLayer::IsLoaded(const std::string& texture, const std::string& mapName)
 
 			if (totalTiles.x <= 0) 
 			{
-				Debug::Print("total tiles on X is <= 0 ", totalTiles.x, LogLevel::ERROR_);
+				Log::Print("total tiles on X is <= 0 ", totalTiles.x, LogLevel::ERROR_);
 				assert(totalTiles.x);
 			}
 
@@ -114,7 +114,7 @@ bool TileLayer::IsMapNameValid(const YAML::Node& mapData, const std::string& map
 {
 	if (!mapData[mapName])
 	{
-		Debug::Print("Invalid map name | node", LogLevel::ERROR_);
+		Log::Print("Invalid map name | node", LogLevel::ERROR_);
 		return false;
 	}
 	return true;

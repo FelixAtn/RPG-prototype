@@ -15,6 +15,8 @@ StateManager::~StateManager()
 
 void StateManager::Update(float deltaTime)
 {
+	Cursor::Get().Update();
+
 	if (m_Current != nullptr)
 	{
 		m_Current->Update(deltaTime);
@@ -29,6 +31,7 @@ void StateManager::Draw(Window& window)
 }
 void StateManager::HandleInput(float deltaTime)
 {
+	InputManager::Get().Update(deltaTime);
 	if (m_Current != nullptr)
 	{
 		m_Current->HandleInput(deltaTime);
@@ -39,14 +42,14 @@ void StateManager::Add(std::shared_ptr<I_GameState> pushingState, int allocation
 	// Check if the ID is already mapped
 	if (m_States.find(allocationID) != m_States.end()) 
 	{
-		Debug::Print("State with this allocation ID already exists!", LogLevel::ERROR_);
+		Log::Print("State with this allocation ID already exists!", LogLevel::ERROR_);
 		return; 
 	}
 
 	// Check if the state is valid
 	if (!pushingState) 
 	{
-		Debug::Print("Cannot add a null state!", LogLevel::ERROR_);
+		Log::Print("Cannot add a null state!", LogLevel::ERROR_);
 		return; // Exit if the state is null
 	}
 
@@ -67,7 +70,7 @@ void StateManager::Switch(int stateID)
 	{
 		if (m_Current != nullptr)
 		{
-			Debug::Print("Changing current state to", stateID);
+			Log::Print("Changing current state to", stateID);
 			m_Current->OnStop();
 		}
 

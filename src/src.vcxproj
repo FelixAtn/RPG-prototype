@@ -36,7 +36,7 @@
     <ClCompile Include="Engine\Managers\Window.cpp" />
     <ClCompile Include="Engine\UI\Camera.cpp" />
     <ClCompile Include="Engine\UI\Minimap.cpp" />
-    <ClCompile Include="Engine\Utility\Debug.cpp" />
+    <ClCompile Include="Engine\Utility\Log.cpp" />
     <ClCompile Include="Engine\Utility\RandomGen.cpp" />
     <ClCompile Include="Engine\Utility\Timer.cpp" />
     <ClCompile Include="Engine\Utility\Vector2.cpp" />
@@ -49,6 +49,11 @@
     <ClCompile Include="Game\MainMenu\MainMenu.cpp" />
     <ClCompile Include="Engine\Component\AI\HostileAI.cpp" />
     <ClCompile Include="Engine\Component\Core\C_InputHandler.cpp" />
+    <ClCompile Include="imgui\imgui-SFML.cpp" />
+    <ClCompile Include="imgui\imgui.cpp" />
+    <ClCompile Include="imgui\imgui_draw.cpp" />
+    <ClCompile Include="imgui\imgui_tables.cpp" />
+    <ClCompile Include="imgui\imgui_widgets.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Engine\Object\ConcreteObjects\Characters\Hostile\Hostile.cpp" />
     <ClCompile Include="Engine\Component\AI\PatrolBehaviour.cpp" />
@@ -64,10 +69,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Component\Gameplay\C_Shoot.h" />
+    <ClInclude Include="Engine\Enums\TileTypeID.h" />
     <ClInclude Include="Engine\UI\Cursor.h" />
     <ClInclude Include="Game\InGame\CharactersManager.h" />
     <ClInclude Include="Engine\Component\Core\C_Renderable.h" />
-    <ClInclude Include="Engine\Enums\TileTypeID.h" />
     <ClInclude Include="Engine\Enums\WorldMaps.h" />
     <ClInclude Include="Engine\Component\Colliders\C_BoxCollider.h" />
     <ClInclude Include="Engine\Component\AI\AttackBehaviour.h" />
@@ -84,7 +89,7 @@
     <ClInclude Include="Engine\Managers\Window.h" />
     <ClInclude Include="Engine\UI\Camera.h" />
     <ClInclude Include="Engine\UI\Minimap.h" />
-    <ClInclude Include="Engine\Utility\Debug.h" />
+    <ClInclude Include="Engine\Utility\Log.h" />
     <ClInclude Include="Engine\Utility\FileLoader.h" />
     <ClInclude Include="Engine\Utility\RandomGen.h" />
     <ClInclude Include="Engine\Utility\Timer.h" />
@@ -101,13 +106,20 @@
     <ClInclude Include="Engine\Component\AI\PatrolBehaviour.h" />
     <ClInclude Include="Engine\Component\Core\C_InputHandler.h" />
     <ClInclude Include="Engine\Managers\RenderingSystem.h" />
+    <ClInclude Include="imgui\imconfig-SFML.h" />
+    <ClInclude Include="imgui\imconfig.h" />
+    <ClInclude Include="imgui\imgui-SFML.h" />
+    <ClInclude Include="imgui\imgui-SFML_export.h" />
+    <ClInclude Include="imgui\imgui.h" />
+    <ClInclude Include="imgui\imgui_internal.h" />
+    <ClInclude Include="imgui\imstb_rectpack.h" />
+    <ClInclude Include="imgui\imstb_textedit.h" />
+    <ClInclude Include="imgui\imstb_truetype.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Engine\Tilemap\TileLayer.h" />
     <ClInclude Include="Engine\Tilemap\Tile.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
-    <None Include="config.yaml" />
     <None Include="Game\ClassDiagram.cd" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -187,7 +199,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-audio-d.lib;sfml-network-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-audio-d.lib;sfml-network-d.lib;%(AdditionalDependencies)opengl32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)dependencies\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -209,6 +221,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies)opengl32.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -225,7 +238,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>tgui-d.lib;yaml-cppd.lib;sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-audio-d.lib;sfml-network-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>tgui-d.lib;yaml-cppd.lib;sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-audio-d.lib;sfml-network-d.lib;%(AdditionalDependencies)opengl32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)dependencies\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -250,7 +263,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)dependencies\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>tgui.lib;sfml-graphics.lib;sfml-window.lib;sfml-system.lib;sfml-audio.lib;sfml-network.lib;yaml-cpp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>tgui.lib;sfml-graphics.lib;sfml-window.lib;sfml-system.lib;sfml-audio.lib;sfml-network.lib;yaml-cpp.lib;%(AdditionalDependencies)opengl32.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

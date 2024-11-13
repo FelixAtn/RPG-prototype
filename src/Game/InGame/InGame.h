@@ -17,12 +17,12 @@ public:
 	void HandleInput(float deltaTime) override;
 
 private:
-	std::unique_ptr<TileLayer> m_Flooring;
+	StateManager& m_StateManager;
 
 	CharactersManager m_Characters;
 	Player m_Player;
-	StateManager& m_StateManager;
 	AudioManager m_Sound;
+	std::unique_ptr<TileLayer> m_Flooring;
 	RandomGenerator m_Random;
 
 	RenderingSystem m_RenderingManager;

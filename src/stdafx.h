@@ -24,9 +24,9 @@
 // YAML PARSER
 #include <yaml-cpp/yaml.h>
 
-// TGUI
-#include <TGUI/tgui.hpp>
-#include <TGUI/Backend/SFML-Graphics.hpp>
+
+#include <imgui/imgui.h>
+#include <imgui/imgui-SFML.h>
 
 // SFML includes
 #include <SFML/Graphics.hpp>
@@ -35,7 +35,7 @@
 #include <SFML/System.hpp>
 
 // Utilities
-#include "Engine/Utility/Debug.h"
+#include "Engine/Utility/Log.h"
 #include "Engine/Utility/Vector2.h"
 #include "Engine/Utility/Timer.h"
 #include "Engine/Utility/RandomGen.h"

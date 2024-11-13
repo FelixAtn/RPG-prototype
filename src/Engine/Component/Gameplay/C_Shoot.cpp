@@ -116,7 +116,7 @@ void C_Shoot::Shoot(Object& attacker, Object& target, float deltaTime)
 		m_ProjectileList.emplace_back(projectile);
 		m_ProjectileVelocities.emplace_back(direction * 200.0f);
 
-		Debug::Print("Shooting. \n Size: ", m_ProjectileList.size());
+		Log::Print("Shooting. \n Size: ", m_ProjectileList.size());
 		m_CanShoot = false;
 	}
 }

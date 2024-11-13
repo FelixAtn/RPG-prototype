@@ -1,2 +1,2 @@
 #include "stdafx.h"
-#include "Debug.h"
+#include "Log.h"
