@@ -33,8 +33,6 @@ void Player::HandleCollision(Object& other, float pushValue)
 	{
 		return;
 	}
-
-
 }
 
 void Player::HandleObjectInteractions(Object& other, float deltaTime)

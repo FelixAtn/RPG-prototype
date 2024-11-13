@@ -7,7 +7,7 @@ enum class LogLevel
 	ERROR_
 };
 
-class Debug
+class Log
 {
 public:
 

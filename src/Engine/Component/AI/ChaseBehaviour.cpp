@@ -8,7 +8,7 @@ ChaseBehaviour::ChaseBehaviour(Object& object)
 {
 	if (m_Data == nullptr || m_Sprite == nullptr || m_Movement == nullptr)
 	{
-		Debug::Print("AI PATROL - failed INIT: Missing components (nullptr)", LogLevel::ERROR_);
+		Log::Print("AI PATROL - failed INIT: Missing components (nullptr)", LogLevel::ERROR_);
 		throw std::runtime_error("AI PATROL - Missing Components");
 	}
 }

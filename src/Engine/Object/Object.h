@@ -57,7 +57,7 @@ public:
 	{
 		if (auto component = GetComponent<T>())
 		{
-			Debug::Print("Component already exists!", LogLevel::WARNING);
+			Log::Print("Component already exists!", LogLevel::WARNING);
 			return component;
 		}
 

@@ -17,7 +17,6 @@ void CharactersManager::InitPlayer(const Vector2f& position)
 	}
 }
 
-
 void CharactersManager::HandleInput()
 {
 

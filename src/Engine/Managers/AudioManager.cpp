@@ -13,7 +13,7 @@ void AudioManager::PlaySoundX(const std::string& name)
 	}
 	else
 	{
-		Debug::Print("SOUND " + name, LogLevel::ERROR_);
+		Log::Print("SOUND " + name, LogLevel::ERROR_);
 	}
 		
 }
@@ -44,4 +44,29 @@ void AudioManager::RemoveSound()
 		{
 			return sound->getStatus() == sf::Sound::Stopped;
 		}), m_Sounds.end());
+}
+
+void AudioManager::SetBuffer(const std::string& sound)
+{
+	m_SingleSound.setBuffer(*ResourceManager::Get().GetSoundBuffer(sound));
+
+}
+
+bool AudioManager::Play()
+{
+	if (m_SingleSound.getStatus() != sf::Sound::Playing)
+	{
+		m_SingleSound.play();
+		return true;
+	}
+	return false;
+}
+
+bool AudioManager::IsSoundDone()
+{
+	if (m_SingleSound.getStatus() == sf::Sound::Stopped)
+	{
+		return true;
+	}
+	return false;
 }

@@ -14,7 +14,7 @@ C_Movement::C_Movement(Object& object)
 {
 	if (m_Sprite == nullptr || m_Data == nullptr)
 	{
-		Debug::Print("Movement - failed INIT: Missing components (nullptr)", LogLevel::ERROR_);
+		Log::Print("Movement - failed INIT: Missing components (nullptr)", LogLevel::ERROR_);
 		throw std::runtime_error("Movement - Missing Components");
 	}
 	m_MaxSpeed = m_Data->GetMovementSpeed();

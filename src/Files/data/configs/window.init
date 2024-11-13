@@ -1,0 +1,21 @@
+window:
+  title: "Game"
+  width: 1280
+  height: 720
+  videoMode:
+    width: 1280
+    height: 720
+    bitsPerPixel: 32
+  style: 5  # sf::Style::default
+  backgroundColor:
+    r: 0
+    g: 0
+    b: 0
+    a: 255
+  isCursorVisible: true
+  isVSyncOn: true
+  isFullscreenOn: false
+  isAntiAliasingOn: false
+  isWindowResizable: true
+  shouldCaptureMouseEvents: true
+  shouldCaptureKeyboardEvents: true

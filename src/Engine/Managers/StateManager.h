@@ -29,7 +29,7 @@ public:
 
 	void PrintStates() const {
 		for (const auto& [id, state] : m_States) {
-			Debug::Print("State ID: " + std::to_string(id), LogLevel::INFO);
+			Log::Print("State ID: " + std::to_string(id), LogLevel::INFO);
 		}
 	}
 private:

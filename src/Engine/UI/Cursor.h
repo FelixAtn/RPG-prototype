@@ -16,15 +16,15 @@ public:
 
     void SetTexture(const std::string& textureName);
 
-    void Update(Window& window);
+    void Update();
 
     void Draw(Window& window);
 
     const Vector2i& GetPosition() const { return m_CursorPosition; }
 
 private:
-    Cursor() = default; // Private constructor to prevent instantiation
-    sf::Sprite m_CursorSprite; ///< The SFML cursor.
+    Cursor() = default;
+    sf::Sprite m_CursorSprite; 
     Vector2i m_CursorPosition;
-
+    Window* m_Window;
 };

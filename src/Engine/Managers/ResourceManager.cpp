@@ -9,7 +9,7 @@ bool ResourceManager::LoadTexture(const std::string& name, const std::string& fi
 	if (!texture->loadFromFile(filename))
 	{
 		std::string textureLog = "TEXTURE: " + name;
-		Debug::Print(textureLog, LogLevel::WARNING);
+		Log::Print(textureLog, LogLevel::WARNING);
 		return false; // Failed to load texture
 	}
 	m_Textures[name] = std::move(texture); // Store the texture
@@ -30,7 +30,7 @@ bool ResourceManager::LoadFont(const std::string& name, const std::string& filen
 	if (!font->loadFromFile(filename)) 
 	{
 		std::string fontLog = "FONT: " + name;
-		Debug::Print(fontLog, LogLevel::WARNING);
+		Log::Print(fontLog, LogLevel::WARNING);
 		return false; 
 	}
 
@@ -50,7 +50,7 @@ bool ResourceManager::LoadSoundBuffer(const std::string& name, const std::string
 	if (!soundBuffer->loadFromFile(filename)) 
 	{
 		std::string audioLog = "Audio: " + name;
-		Debug::Print(audioLog, LogLevel::WARNING);
+		Log::Print(audioLog, LogLevel::WARNING);
 		return false; 
 	}
 	m_SoundBuffers[name] = std::move(soundBuffer); // Store the sound buffer
@@ -65,7 +65,7 @@ sf::SoundBuffer* ResourceManager::GetSoundBuffer(const std::string& name)
 	{
 		return it->second.get();
 	}
-	Debug::Print("SOUND " + name, LogLevel::ERROR_);
+	Log::Print("SOUND " + name, LogLevel::ERROR_);
 	return nullptr;
 }
 
@@ -76,7 +76,7 @@ bool ResourceManager::LoadMusic(const std::string& name, const std::string& file
 	if (!music->openFromFile(filename))
 	{
 		std::string musicLog = "MUSIC: " + name;
-		Debug::Print(musicLog, LogLevel::WARNING);
+		Log::Print(musicLog, LogLevel::WARNING);
 		return false;
 	}
 	m_Music[name] = std::move(music);

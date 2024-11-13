@@ -8,7 +8,7 @@ C_InputHandler::C_InputHandler(Object& object)
 {
 	if (m_Animation == nullptr || m_Movement == nullptr || m_Data == nullptr)
 	{
-		Debug::Print("InputHandler - failed INIT: Missing components (nullptr)", LogLevel::ERROR_);
+		Log::Print("InputHandler - failed INIT: Missing components (nullptr)", LogLevel::ERROR_);
 		throw std::runtime_error("Input Handler - Missing Components");
 	}
 }
