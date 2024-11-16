@@ -19,22 +19,22 @@ void C_InputHandler::Update(Object& other, float deltaTime)
 	bool isMoving = false;
 
 
-	if (InputManager::Get().IsKeyDown(KeyBind::LEFT))
+	if (InputManager::Get().IsKeyDown(KeyBind::A))
 	{
 		velocity.x -= 1.0f;
 		isMoving = true;
 	}
-	if (InputManager::Get().IsKeyDown(KeyBind::RIGHT))
+	if (InputManager::Get().IsKeyDown(KeyBind::D))
 	{
 		velocity.x += 1.0f;
 		isMoving = true;
 	}
-	if (InputManager::Get().IsKeyDown(KeyBind::UP))
+	if (InputManager::Get().IsKeyDown(KeyBind::W))
 	{
 		velocity.y -= 1.0f;
 		isMoving = true;
 	}
-	if (InputManager::Get().IsKeyDown(KeyBind::DOWN))
+	if (InputManager::Get().IsKeyDown(KeyBind::S))
 	{
 		velocity.y += 1.0f;
 		isMoving = true;
@@ -42,11 +42,11 @@ void C_InputHandler::Update(Object& other, float deltaTime)
 
 	// Handle action inputs
 
-	if (InputManager::Get().IsKeyPress(KeyBind::CHARGE_ATTACK))
+	if (InputManager::Get().IsKeyPress(KeyBind::RIGHT_CLICK))
 	{
 		m_Animation->PlayAction(AnimationID::SPELL_ATTACK_RIGHT);
 	}
-	if (InputManager::Get().IsKeyDown(KeyBind::SPELL_TWO))
+	if (InputManager::Get().IsKeyDown(KeyBind::R))
 	{
 		m_Animation->PlayAction(AnimationID::BUFF_CAST);
 	}

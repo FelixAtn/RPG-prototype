@@ -26,4 +26,8 @@ void Cursor::Draw(Window& window)
 	}
 }
 
+bool Cursor::isMouseOver(const sf::FloatRect& bounds) const
+{
+	return bounds.contains(static_cast<float>(m_CursorPosition.x), static_cast<float>(m_CursorPosition.y));
+}
 

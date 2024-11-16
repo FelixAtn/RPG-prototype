@@ -37,7 +37,7 @@ void Player::HandleCollision(Object& other, float pushValue)
 
 void Player::HandleObjectInteractions(Object& other, float deltaTime)
 {
-	if (InputManager::Get().IsKeyPress(KeyBind::BASIC_ATTACK))
+	if (InputManager::Get().IsKeyPress(KeyBind::LEFT_CLICK))
 	{
 		m_Shoot->Shoot(*this, other, deltaTime);
 	}

@@ -141,6 +141,12 @@
     <ClCompile Include="imgui\imgui-SFML.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Game\TileEditor\LevelEditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\TileEditor\World.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -293,8 +299,15 @@
     <ClInclude Include="Engine\Enums\TileTypeID.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Game\TileEditor\LevelEditor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\TileEditor\World.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Game\ClassDiagram.cd" />
+    <None Include="Files\data\configs\window.init" />
   </ItemGroup>
 </Project>

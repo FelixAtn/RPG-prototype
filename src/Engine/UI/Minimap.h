@@ -11,7 +11,7 @@ public:
 
 	void SetCenter(const Vector2f& centerPosition) { m_MinimapView.setCenter(centerPosition); }
 	void SetWorldSize(Vector2f& worldSize) { m_MinimapView.setSize(worldSize); }
-	void Apply(Window& window) { window.SetCurrentView(m_MinimapView);}
+	//void Apply(Window& window) { window.SetCurrentView(m_MinimapView);}
 
 private:
 	sf::View m_MinimapView;

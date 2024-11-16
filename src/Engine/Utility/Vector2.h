@@ -189,6 +189,15 @@ public:
         return Vector2(this->x * scalar, this->y * scalar);
     }
 
+	Vector2 operator/ (const Vector2& other) const
+	{
+        if (other.x != 0 && other.y != 0)
+        {
+			return Vector2(this->x / other.x, this->y / other.y);
+        }
+		return Vector2(0, 0);
+	}
+
     /**
      * @brief Divide this vector by a scalar.
      *

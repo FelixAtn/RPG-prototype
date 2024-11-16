@@ -1,98 +1,58 @@
 #pragma once
-constexpr int DEFAULT_RESOLUTION_WIDTH = 1920;
-constexpr int DEFAULT_RESOLUTION_HEIGHT = 1080;
+
 const sf::Color RED_COLOR = { 120,6,6 };
 
-struct WindowData
-{
-	sf::View defaultView;
-	sf::View currentView;
-	std::string title;
-	sf::Image icon;
-	sf::VideoMode videoMode;
-	sf::Color backgroundColor;
-	Vector2i windowPosition;
-	sf::Uint32 style;
-	int width;
-	int height;
-	bool isCursorVisible;
-	bool isCursorWithinWindow;
-	bool isVSyncOn;
-	bool isFullscreenOn;
-	bool isAntiAliasingOn;
-	bool isWindowResizable;
-	bool shouldCaptureMouseEvents;
-	bool shouldCaptureKeyboardEvents;
-};
 
-class Window
+class Window : public sf::RenderWindow
 {
 public:
-	inline operator const sf::RenderWindow&() const { return m_Window; }
-	inline operator sf::RenderWindow&() { return m_Window; }
+	inline operator const Window&() const { return *this; }
+	inline operator Window&() { return *this; }
 
 	void Init(const std::string& fileName);
+	void LoadSettings(const std::string& fileName);
+	void SaveSettings(const std::string& fileName) const;
 
-	bool IsOpen() const { return m_Window.isOpen(); }
-	void Clear(sf::Color backgroundColor = RED_COLOR)
-	{
-		m_Window.clear(backgroundColor);
-	}
-	void Display() { m_Window.display(); }
-	void Draw(sf::Drawable& drawable) { m_Window.draw(drawable); }
+	void Draw(const sf::Drawable& drawable, const sf::RenderStates& states = sf::RenderStates::Default) { draw(drawable, states); }
+	void DrawVertices(const sf::Vertex* vertices, std::size_t vertexCount, sf::PrimitiveType type) { draw(vertices, vertexCount, type); }
+	void DrawVertexBuffer(const sf::VertexBuffer& vertexBuffer, sf::RenderStates states) { draw(vertexBuffer, states); }
+	void DrawVertexBuffer(const sf::VertexBuffer& vertexBuffer) { draw(vertexBuffer); }
+	void DrawVertexBufferRange(const sf::VertexBuffer& vertexBuffer, std::size_t firstVertex, std::size_t vertexCount, sf::RenderStates states) { draw(vertexBuffer, firstVertex, vertexCount, states); }
+	void DrawVertexBufferRange(const sf::VertexBuffer& vertexBuffer, std::size_t firstVertex, std::size_t vertexCount) { draw(vertexBuffer, firstVertex, vertexCount); }
 
-	bool PollEvent(sf::Event& event) { return m_Window.pollEvent(event); }
+	const std::string& GetTitle() const { return m_WindowSettings.title; }
+	const int GetWidth() const { return m_WindowSettings.width; }
+	const int GetHeight() const { return m_WindowSettings.height; }
+	const int GetMaxFPS() const { return m_WindowSettings.maxFPS; }
+	const sf::Uint32 GetStyle() const { return m_WindowSettings.style; }
+	const bool IsCursorVisible() const { return m_WindowSettings.isCursorVisible; }
+	const bool IsVSyncOn() const { return m_WindowSettings.isVSyncOn; }
+	const bool IsFullscreenOn() const { return m_WindowSettings.isFullscreenOn; }
 
-	void Close() { m_Window.close(); }
+	void SetTitle(const std::string& title) { m_WindowSettings.title = title; }
+	void SetWidth(int width) { m_WindowSettings.width = width; }
+	void SetHeight(int height) { m_WindowSettings.height = height; }
+	void SetMaxFPS(int maxFPS) { m_WindowSettings.maxFPS = maxFPS; }
+	void SetStyle(sf::Uint32 style) { m_WindowSettings.style = style; }
+	void SetCursorVisible(bool isCursorVisible) { m_WindowSettings.isCursorVisible = isCursorVisible; }
+	void SetVSyncOn(bool isVSyncOn) { m_WindowSettings.isVSyncOn = isVSyncOn; }
+	void SetFullscreenOn(bool isFullscreenOn) { m_WindowSettings.isFullscreenOn = isFullscreenOn; }
 
-	// Getters for WindowData
-	const sf::View& GetDefaultView() const { return m_WindowData.defaultView; }
-	const sf::View& GetCurrentView() const { return m_WindowData.currentView; }
-	const std::string& GetTitle() const { return m_WindowData.title; }
-	const sf::Image& GetIcon() const { return m_WindowData.icon; }
-	const sf::VideoMode& GetVideoMode() const { return m_WindowData.videoMode; }
-	const sf::Color& GetBackgroundColor() const { return m_WindowData.backgroundColor; }
-	unsigned int GetWidth() const { return m_WindowData.width; }
-	unsigned int GetHeight() const { return m_WindowData.height; }
-	Vector2i GetSize() { return { m_WindowData.width, m_WindowData.height }; }
-	const sf::Vector2i& GetPosition() const { return m_WindowData.windowPosition; }
-	sf::Uint32 GetStyle() const { return m_WindowData.style; }
-	bool IsCursorVisible() const { return m_WindowData.isCursorVisible; }
-	bool IsCursorWithinWindow() const { return m_WindowData.isCursorWithinWindow; }
-	bool IsVSyncOn() const { return m_WindowData.isVSyncOn; }
-	bool IsFullscreenOn() const { return m_WindowData.isFullscreenOn; }
-	bool IsAntiAliasingOn() const { return m_WindowData.isAntiAliasingOn; }
-	bool IsWindowResizable() const { return m_WindowData.isWindowResizable; }
-	bool ShouldCaptureMouseEvents() const { return m_WindowData.shouldCaptureMouseEvents; }
-	bool ShouldCaptureKeyboardEvents() const { return m_WindowData.shouldCaptureKeyboardEvents; }
 
- 	// Setters for WindowData
-	void SetDefaultView(const sf::View& view) { m_WindowData.defaultView = view; }
-	void SetCurrentView(const sf::View& view) { m_WindowData.currentView = view; }
-	void SetTitle(const std::string& title) { m_WindowData.title = title; }
-	void SetIcon(const sf::Image& icon) { m_WindowData.icon = icon; }
-	void SetVideoMode(const sf::VideoMode& videoMode) { m_WindowData.videoMode = videoMode; }
-	void SetBackgroundColor(const sf::Color& color) { m_WindowData.backgroundColor = color; }
-	void SetWidth(unsigned int width) { m_WindowData.width = width; }
-	void SetHeight(unsigned int height) { m_WindowData.height = height; }
-	void SetPosition(const sf::Vector2i& position) 
-	{
-		m_WindowData.windowPosition = position;
-		m_Window.setPosition(position); // Update SFML window position
-	}
-	void SetStyle(sf::Uint32 style) { m_WindowData.style = style; }
-	void SetCursorVisible(bool visible) { m_WindowData.isCursorVisible = visible; }
-	void SetVSync(bool enabled) { m_WindowData.isVSyncOn = enabled; }
-	void SetFullscreen(bool enabled);
-	void SetWindowed(bool enabled);
-	void ToggleFullscreen();
-	void SetAntiAliasing(bool enabled) { m_WindowData.isAntiAliasingOn = enabled; }
-	void SetWindowResizable(bool resizable) { m_WindowData.isWindowResizable = resizable; }
-	void SetCaptureMouseEvents(bool capture) { m_WindowData.shouldCaptureMouseEvents = capture; }
-	void SetCaptureKeyboardEvents(bool capture) { m_WindowData.shouldCaptureKeyboardEvents = capture; }
 
 private:
-	WindowData m_WindowData;
-	sf::RenderWindow m_Window;
+	struct WindowSettings
+	{
+		std::string title;
+		int width;
+		int height;
+		int maxFPS;
+		sf::Uint32 style;
+		bool isCursorVisible;
+		bool isVSyncOn;
+		bool isFullscreenOn;
+	};
+
+	WindowSettings m_WindowSettings;
 };
 

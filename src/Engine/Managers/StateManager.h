@@ -1,7 +1,11 @@
 #pragma once
 
-constexpr int MAIN_MENU_STATE_ID = 0;
-constexpr int PLAY_STATE_ID = 1;
+enum GameStateID
+{
+	MAIN_MENU_STATE_ID = 0,
+	PLAY_STATE_ID,
+	LEVEL_EDITOR_STATE_ID
+};
 
 class I_GameState
 {

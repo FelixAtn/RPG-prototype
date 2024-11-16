@@ -22,6 +22,7 @@ public:
 
     const Vector2i& GetPosition() const { return m_CursorPosition; }
 
+	bool isMouseOver(const sf::FloatRect& bounds) const;
 private:
     Cursor() = default;
     sf::Sprite m_CursorSprite; 

@@ -22,26 +22,26 @@ enum class GamepadKey
 
 enum class KeyBind
 {
-	UP,
-	DOWN,
-	LEFT,
-	RIGHT,
-	DIAGONAL_RIGHT_UP,
-	DIAGONAL_RIGHT_DOWN,
-	DIAGONAL_LEFT_UP,
-	DIAGONAL_LEFT_DOWN,
-	DODGE,
-	BASIC_ATTACK, 
-	CHARGE_ATTACK, 
-	SPELL_ONE,
-	SPELL_TWO,
-	SPELL_THREE,
-	INTERACT, 
+	W,
+	S,
+	A,
+	D,
+	W_D,
+	S_D,
+	W_A,
+	S_A,
+	SHIFT,
+	LEFT_CLICK, 
+	RIGHT_CLICK, 
+	Q,
+	R,
+	F,
+	E, 
 	USE, // Not used (mouse)
 	PICK_UP, // Not used (mouse)
 	ZOOM_IN, // Not used (mouse)
 	ZOOM_OUT, // Not used (mouse)
-	PAUSE
+	ESC
 };
 
 class InputManager

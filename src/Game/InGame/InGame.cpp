@@ -18,6 +18,10 @@ void PlayState::Update(float deltaTime)
 	m_Flooring->Update(deltaTime);
 	m_Characters.Update(deltaTime);
 
+	if (InputManager::Get().IsKeyPress(KeyBind::ESC))
+	{
+		m_StateManager.Switch(GameStateID::LEVEL_EDITOR_STATE_ID);
+	}
 
 	/*if (InputManager::Get().IsKeyPress(KeyBind::DODGE))
 	{

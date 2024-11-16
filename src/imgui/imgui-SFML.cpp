@@ -973,9 +973,11 @@ void updateMouseCursor(sf::Window& window) {
     ImGuiIO& io = ImGui::GetIO();
     if ((io.ConfigFlags & ImGuiConfigFlags_NoMouseCursorChange) == 0) {
         ImGuiMouseCursor cursor = ImGui::GetMouseCursor();
-        if (io.MouseDrawCursor || cursor == ImGuiMouseCursor_None) {
+        if (io.MouseDrawCursor || cursor == ImGuiMouseCursor_None) 
+        {
             window.setMouseCursorVisible(false);
-        } else {
+        } else 
+        {
             window.setMouseCursorVisible(true);
 
             sf::Cursor& c = s_mouseCursorLoaded[cursor] ? *s_mouseCursors[cursor] :

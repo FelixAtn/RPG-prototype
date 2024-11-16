@@ -30,8 +30,7 @@ void MenuState::OnStop()
 
 void MenuState::Update(float deltaTime)
 {
-	
-	if (InputManager::Get().IsKeyPress(KeyBind::PAUSE))
+	if (InputManager::Get().IsKeyPress(KeyBind::ESC))
 	{
 		m_Music.PlaySoundX("play_button");
 		m_StateManager.Switch(PLAY_STATE_ID);

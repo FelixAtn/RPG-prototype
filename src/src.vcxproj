@@ -54,6 +54,7 @@
     <ClCompile Include="imgui\imgui_draw.cpp" />
     <ClCompile Include="imgui\imgui_tables.cpp" />
     <ClCompile Include="imgui\imgui_widgets.cpp" />
+    <ClCompile Include="Game\TileEditor\LevelEditor.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Engine\Object\ConcreteObjects\Characters\Hostile\Hostile.cpp" />
     <ClCompile Include="Engine\Component\AI\PatrolBehaviour.cpp" />
@@ -66,6 +67,7 @@
     </ClCompile>
     <ClCompile Include="Engine\Tilemap\TileLayer.cpp" />
     <ClCompile Include="Engine\Tilemap\Tile.cpp" />
+    <ClCompile Include="Game\TileEditor\World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Component\Gameplay\C_Shoot.h" />
@@ -115,11 +117,14 @@
     <ClInclude Include="imgui\imstb_rectpack.h" />
     <ClInclude Include="imgui\imstb_textedit.h" />
     <ClInclude Include="imgui\imstb_truetype.h" />
+    <ClInclude Include="Game\TileEditor\LevelEditor.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Engine\Tilemap\TileLayer.h" />
     <ClInclude Include="Engine\Tilemap\Tile.h" />
+    <ClInclude Include="Game\TileEditor\World.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Files\data\configs\window.init" />
     <None Include="Game\ClassDiagram.cd" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
